@@ -107,28 +107,40 @@ p {
   align-items: center;
   padding: 1rem;
 }
-
-.navbar {
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+.header .navbar {
   width: 100%;
 }
-.navbar__ul {
+.header .navbar__ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
 }
-.navbar__li {
+.header .navbar__li {
   padding-top: 1.5rem;
 }
-.navbar__a {
+.header .navbar__a {
   text-align: center;
 }
-.navbar__a:hover {
-  color: #FFFFFF;
-}
-.navbar__a:active {
-  color: #FFFFFF;
-  font-weight: bold;
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .header .navbar {
+    width: 35%;
+  }
+  .header .navbar__li {
+    padding-bottom: 0.5rem;
+  }
+  .header .navbar__a {
+    font-size: 1.25rem;
+  }
 }
 
 .banner {
@@ -148,6 +160,11 @@ p {
   font-size: 2rem;
   margin: auto 0;
 }
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .banner__title {
+    font-size: 3.75rem;
+  }
+}
 
 .main {
   padding: 1rem;
@@ -165,6 +182,21 @@ p {
   font-weight: bold;
   padding: 0.5rem;
 }
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .main__title {
+    font-size: 2.625rem;
+  }
+  .main__image-container {
+    text-align: center;
+  }
+  .main__image {
+    width: 80%;
+  }
+  .main__text {
+    font-size: 0.875rem;
+    padding: 0 4rem;
+  }
+}
 
 .about {
   margin-bottom: 1rem;
@@ -175,6 +207,15 @@ p {
 .about__description {
   padding-bottom: 1rem;
   font-weight: medium;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .about {
+    margin: 0 5rem;
+  }
+  .about__descriptions {
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 .gallery {
@@ -192,6 +233,21 @@ p {
 .gallery__image {
   width: 100%;
   margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .gallery__title {
+    font-size: 2.625rem;
+  }
+  .gallery__images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .gallery__image {
+    width: 30%;
+  }
 }
 
 .footer {

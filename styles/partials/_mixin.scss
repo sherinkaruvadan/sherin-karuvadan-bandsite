@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+//Media Query for tablet
+@mixin tablet {
+  @media screen and (min-width: $breakpoint-tablet) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+//Media Query for desktop
+@mixin desktop {
+  @media screen and (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+//mixin for flex
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

@@ -1,0 +1,15 @@
+@use "./typography" as *;
+//Colors
+$primary-color: #323232;
+$secondary-color: #AFAFAF;
+$background-alternative-light: #FAFAFA;
+$button-hover-color: #000000;
+$button-text: #FFFFFF;
+$link-text: #E1E1E1;
+
+//Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+
+//font-family
+$primary-font:'NunitoSans';

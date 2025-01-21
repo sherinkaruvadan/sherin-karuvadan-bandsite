@@ -55,16 +55,16 @@
     }
     &__text{
         font-weight: bold; 
-        padding: 1rem;
     }
     &__subtext{
         font-weight: bold;
-        padding: 0 1.25rem;
+        padding: .5rem
     }
 }
 
 //About Section
 .about{
+    margin-bottom: 1rem;
     &__title{
         font-weight: 600;
         // padding: 1rem 0;
@@ -108,7 +108,7 @@
             font-weight: 600;
         }
         &__mailto{
-            padding: 1rem 0;
+            padding: 0.5rem 0;
         }
     }
     &__logo{

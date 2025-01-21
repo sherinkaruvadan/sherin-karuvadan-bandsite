@@ -160,13 +160,15 @@ p {
 }
 .main__text {
   font-weight: bold;
-  padding: 1rem;
 }
 .main__subtext {
   font-weight: bold;
-  padding: 0 1.25rem;
+  padding: 0.5rem;
 }
 
+.about {
+  margin-bottom: 1rem;
+}
 .about__title {
   font-weight: 600;
 }
@@ -212,7 +214,7 @@ p {
   font-weight: 600;
 }
 .footer .address__mailto {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 .footer__logo {
   padding: 1rem 0;

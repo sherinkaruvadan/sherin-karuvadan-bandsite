@@ -9,7 +9,7 @@
 
 //Media Query for tablet
 @mixin tablet {
-  @media screen and (min-width: $breakpoint-tablet) and (max-width: 1279px) {
+  @media screen and (min-width: $breakpoint-tablet) {
     @content;
   }
 }

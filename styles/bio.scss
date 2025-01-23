@@ -2,6 +2,7 @@
 @use "./partials/resets";
 @use "./partials/mixin" as *;
 @use "./partials/global" as *;
+@use "./partials/navbar" as *;
 @use "./partials/typography";
 
 .header {
@@ -14,32 +15,8 @@
     @include flex(row, flex-start, center);
     gap: 1rem;
   }
-
-  //navigation
-  .navbar {
-    width: 100%;
-    &__ul {
-      @include flex(row, space-around);
-    }
-    &__li {
-      padding-top: 1.5rem;
-    }
-    &__a {
-      text-align: center;
-    }
-    //tablet
-    @include tablet {
-      width: 35%;
-      &__li {
-        padding-bottom: 0.5rem;
-      }
-      &__a {
-        font-size: 1.25rem;
-      }
-    }
-  }
 }
-
+ 
 //Banner Image Style
 .banner {
   padding: 1rem;
@@ -57,6 +34,9 @@
     color: $button-text;
     margin: auto 0;
   }
+  @include tablet{
+    height: 70vh;
+  }
 }
 
 .main {
@@ -71,11 +51,17 @@
   }
   //tablet
   @include tablet {
-    &__image-container {
-      text-align: center;
+    &__image-container{
+      width: 85%;
+      margin: 0 auto;
+      padding-bottom: 1rem;
     }
-    &__image {
-      width: 80%;
+    &__image{
+      width: 100%;
+    }
+    &__text{
+      padding: 1rem 0;
+      font-weight: bold;
     }
   }
 }
@@ -132,7 +118,7 @@
   &__title {
     color: $button-text;
   }
-  &__social-icons {
+  &__icons {
     @include flex(row, flex-start);
     gap: 2.5rem;
   }
@@ -148,6 +134,9 @@
     &-container {
       @include flex(row, flex-start, center);
       gap: 3rem;
+    }
+    &__icons{
+      padding-top: 1rem;
     }
     &__icon {
       width: 2.2rem;

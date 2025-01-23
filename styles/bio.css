@@ -46,7 +46,7 @@ a {
     padding: 1.5rem 0 1rem 0;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   h1 {
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -62,7 +62,7 @@ a {
     padding: 1.5rem 0 1rem 0;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   h2 {
     font-size: 2.25rem;
     font-weight: bold;
@@ -79,7 +79,7 @@ a {
     padding: 1.5rem 0 1rem 0;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   h3 {
     font-size: 1.5rem;
     font-weight: 500;
@@ -95,10 +95,57 @@ a {
     font-weight: 400;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   p {
     font-size: 0.875rem;
     line-height: 1.375rem;
+  }
+}
+
+.navbar {
+  width: 100%;
+}
+.navbar__ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.navbar__li {
+  padding-top: 1.5rem;
+  position: relative;
+}
+.navbar__a {
+  text-align: center;
+}
+.navbar__underline {
+  position: absolute;
+  left: 0;
+  bottom: -15px; /* Positioned at the bottom of the list item */
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  display: none;
+}
+.navbar__underline--hidden {
+  display: none;
+}
+.navbar__a:active {
+  color: #FFFFFF;
+  transform: scale(1.5);
+}
+.navbar__a:hover + .navbar__underline {
+  display: block; /* Show underline on hover */
+}
+@media screen and (min-width: 768px) {
+  .navbar {
+    width: 35%;
+  }
+  .navbar__li {
+    padding-bottom: 0.5rem;
+  }
+  .navbar__a {
+    font-size: 1.25rem;
   }
 }
 
@@ -110,39 +157,13 @@ a {
   align-items: center;
   padding: 1rem;
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   .header {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
-  }
-}
-.header .navbar {
-  width: 100%;
-}
-.header .navbar__ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: stretch;
-}
-.header .navbar__li {
-  padding-top: 1.5rem;
-}
-.header .navbar__a {
-  text-align: center;
-}
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-  .header .navbar {
-    width: 35%;
-  }
-  .header .navbar__li {
-    padding-bottom: 0.5rem;
-  }
-  .header .navbar__a {
-    font-size: 1.25rem;
   }
 }
 
@@ -162,6 +183,11 @@ a {
   color: #FFFFFF;
   margin: auto 0;
 }
+@media screen and (min-width: 768px) {
+  .banner {
+    height: 70vh;
+  }
+}
 
 .main {
   padding: 1rem;
@@ -174,12 +200,18 @@ a {
     padding: 0.5rem;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   .main__image-container {
-    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
   }
   .main__image {
-    width: 80%;
+    width: 100%;
+  }
+  .main__text {
+    padding: 1rem 0;
+    font-weight: bold;
   }
 }
 
@@ -192,7 +224,7 @@ a {
     font-weight: medium;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   .about {
     margin: 0 5rem;
   }
@@ -217,7 +249,7 @@ a {
     margin-bottom: 2rem;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   .gallery__images {
     display: flex;
     flex-direction: row;
@@ -239,7 +271,7 @@ a {
 .footer__title {
   color: #FFFFFF;
 }
-.footer__social-icons {
+.footer__icons {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -252,13 +284,16 @@ a {
 .footer__logo {
   padding: 1rem 0;
 }
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   .footer-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     gap: 3rem;
+  }
+  .footer__icons {
+    padding-top: 1rem;
   }
   .footer__icon {
     width: 2.2rem;

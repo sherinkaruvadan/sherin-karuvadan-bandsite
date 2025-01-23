@@ -29,11 +29,11 @@
     }
     //tablet
     @include tablet {
-        width: 35%;
-      &__li{
+      width: 35%;
+      &__li {
         padding-bottom: 0.5rem;
       }
-      &__a{
+      &__a {
         font-size: 1.25rem;
       }
     }
@@ -55,68 +55,46 @@
   @include flex(row, flex-start, center);
   &__title {
     color: $button-text;
-    font-size: 2rem;
     margin: auto 0;
-  }
-  //tablet
-  @include tablet{
-    &__title{
-        font-size: 3.75rem;
-    }
   }
 }
 
 .main {
   padding: 1rem;
-  &__title {
-    font-size: 2rem;
-  }
-  &__image {
-    width: 100%;
-  }
-  &__text {
-    font-weight: bold;
-  }
-  &__subtext {
-    font-weight: bold;
-    padding: 0.5rem;
+  @include mobile {
+    &__image {
+      width: 100%;
+    }
+    &__subtext {
+      padding: 0.5rem;
+    }
   }
   //tablet
   @include tablet {
-    &__title{
-        font-size: 2.625rem
-    }
     &__image-container {
-        text-align: center;
+      text-align: center;
     }
-    &__image{
-        width: 80%;
-    }
-    &__text{ 
-      font-size: 0.875rem;
-      padding: 0 4rem;
+    &__image {
+      width: 80%;
     }
   }
- 
 }
 
 //About Section
 .about {
   margin-bottom: 1rem;
-  &__title {
-    font-weight: 600;
-    // padding: 1rem 0;
-  }
-  &__description {
-    padding-bottom: 1rem;
-    font-weight: medium;
+  @include mobile {
+    &__description {
+      padding-bottom: 1rem;
+      font-weight: medium;
+    }
   }
   //tablet
-  @include tablet{
+  @include tablet {
     margin: 0 5rem; //allign the content with image
-    &__descriptions{
-        display: flex;
-        gap: 1rem;
+    &__descriptions {
+      display: flex;
+      gap: 1rem;
     }
   }
 }
@@ -124,38 +102,34 @@
 //Gallery
 .gallery {
   background-color: $background-alternative-light;
-  &__title {
-    font-size: 2rem;
-  }
-  &__images {
-    @include flex(column, center);
-  }
-  &__image {
-    width: 100%;
-    margin-bottom: 2rem;
+  @include mobile {
+    &__images {
+      @include flex(column, center);
+    }
+    &__image {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
   //tablet
-  @include tablet{
-    &__title{
-        font-size: 2.625rem
+  @include tablet {
+    &__images {
+      @include flex(row, space-around);
+      flex-wrap: wrap;
     }
-    &__images{
-        @include flex(row, space-around);
-        flex-wrap: wrap;
-    }
-    &__image{
-        width: 30%;
+    &__image {
+      width: 30%;
     }
   }
 }
 
 //Footer
 .footer {
+  position: relative;
   padding: 1rem;
   background-color: $primary-color;
   color: $button-text;
   &__title {
-    font-size: 2rem;
     color: $button-text;
   }
   &__social-icons {
@@ -163,9 +137,6 @@
     gap: 2.5rem;
   }
   .address {
-    &__heading {
-      font-weight: 600;
-    }
     &__mailto {
       padding: 0.5rem 0;
     }
@@ -173,7 +144,27 @@
   &__logo {
     padding: 1rem 0;
   }
-  &__copyright {
-    font-weight: 400;
+  @include tablet {
+    &-container {
+      @include flex(row, flex-start, center);
+      gap: 3rem;
+    }
+    &__icon {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    &__addresses {
+      @include flex(row);
+      gap: 2rem;
+    }
+    .address__mailto{
+        padding: 1.5rem 0 2.5rem 0;
+    }
+    
+    &__logo {
+      position: absolute;
+      top: 3rem;
+      right: 2rem;
+    }
   }
 }

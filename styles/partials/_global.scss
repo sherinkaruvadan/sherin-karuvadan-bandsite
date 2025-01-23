@@ -1,85 +1,123 @@
 @use "./variables" as *;
 @use "./mixin" as *;
 
-body{
-    font-family: $primary-font;
+body {
+  font-family: $primary-font;
 }
 
-ul{
-    list-style-type: none; //remove bullets from list
+ul {
+  list-style-type: none; //remove bullets from list
 }
-a{
-    text-decoration: none; // remove underline from links
-    color: $link-text;
+a {
+  text-decoration: none; // remove underline from links
+  color: $link-text;
 }
-.header__logo{
-    width: 7.5rem;
-    height: 1.25rem;
-    margin-bottom: 0.5rem;
+.header__logo {
+  width: 7.5rem;
+  height: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 //Global font style for mobile
-h1, h2{
+h1 {
+  @include mobile {
     font-size: 1.5rem;
     font-weight: bold;
     line-height: 2rem;
-    padding: 1.5rem 0 1rem 0;;
+    padding: 1.5rem 0 1rem 0;
+  }
+  @include tablet {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    padding: 3rem 0 2.25rem 0;
+  }
 }
-h3{
-    font-size: .875rem;
+h2 {
+  @include mobile {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2rem;
+    padding: 1.5rem 0 1rem 0;
+  }
+  @include tablet {
+    font-size: 2.25rem;
+    font-weight: bold;
+    line-height: 2.75rem;
+    padding: 3rem 0 2.25rem 0;
+  }
+}
+
+h3 {
+  @include mobile {
+    font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.375rem;
-    padding: 1.5rem 0 1rem 0;;
+    padding: 1.5rem 0 1rem 0;
+  }
+  @include tablet {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    padding: 1.5rem 0 1rem 0;
+  }
 }
-p{
-    font-size: .8125rem;
+p {
+  @include mobile {
+    font-size: 0.8125rem;
     line-height: 1.125rem;
     font-weight: 400;
+  }
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 //button style
-.button{
-    font-size: .625rem;
-    font-weight: bold;
-    line-height: 1.25rem;
-    height: 2.5rem;
-    border-radius: .25rem;
-    background-color: $primary-color;
-    color: $button-text;
-    &:hover{
-        background-color: $button-hover-color;
-    }
-}
-
-
+// .button {
+//   font-size: 0.625rem;
+//   font-weight: bold;
+//   line-height: 1.25rem;
+//   height: 2.5rem;
+//   border-radius: 0.25rem;
+//   background-color: $primary-color;
+//   color: $button-text;
+//   &:hover {
+//     background-color: $button-hover-color;
+//   }
+// }
+// .button {
+//     font-size: 0.75rem;
+//     font-weight: bold;
+//     line-height: 1.25rem;
+//     width: 9.375rem;
+//     padding: 0 2rem;
+//   }
 
 //Global font style for tablet
-@include tablet{
-    h1{
-        font-size: 3.75rem;
-        font-weight: bold;
-        line-height: 4.25rem;
-    }
-    h2{
-        font-size: 2.25rem;
-        font-weight: bold;
-        line-height: 2.75rem;
-    }
-    h3{
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 2rem;
-    }
-    p{
-        font-size: .875rem;
-        line-height: 1.375rem;
-    }
-    .button{
-        font-size: .75rem;
-        font-weight: bold;
-        line-height: 1.25rem;
-        width: 9.375rem;
-        padding: 0 2rem;
-    }
-}
 
+// h1 {
+//   @include tablet {
+//     font-size: 3.75rem;
+//     line-height: 4.25rem;
+//   }
+// }
+// h2 {
+//   @include tablet {
+//     font-size: 2.25rem;
+//     line-height: 2.75rem;
+//   }
+// }
+// h3 {
+//   @include tablet {
+//     font-size: 1.5rem;
+//     font-weight: 500;
+//     line-height: 2rem;
+//   }
+// }
+// p {
+//   @include tablet {
+//     font-size: 0.875rem;
+//     line-height: 1.375rem;
+//   }
+// }

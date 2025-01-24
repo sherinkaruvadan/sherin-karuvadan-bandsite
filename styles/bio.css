@@ -21,6 +21,7 @@
 
 body {
   font-family: "NunitoSans";
+  color: #323232;
 }
 
 ul {
@@ -32,19 +33,11 @@ a {
   color: #E1E1E1;
 }
 
-.header__logo {
-  width: 7.5rem;
-  height: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-@media screen and (max-width: 767px) {
-  h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 2rem;
-    padding: 1.5rem 0 1rem 0;
-  }
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  padding: 1.5rem 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   h1 {
@@ -53,14 +46,19 @@ a {
     padding: 3rem 0 2.25rem 0;
   }
 }
-
-@media screen and (max-width: 767px) {
-  h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 2rem;
-    padding: 1.5rem 0 1rem 0;
+@media screen and (min-width: 1280px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    padding: 3rem 0 2.25rem 1.5rem;
   }
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+  padding: 1.5rem 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   h2 {
@@ -70,14 +68,20 @@ a {
     padding: 3rem 0 2.25rem 0;
   }
 }
-
-@media screen and (max-width: 767px) {
-  h3 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.375rem;
-    padding: 1.5rem 0 1rem 0;
+@media screen and (min-width: 1280px) {
+  h2 {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding: 3rem 0 2.25rem 2.5rem;
   }
+}
+
+h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.375rem;
+  padding: 1.5rem 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   h3 {
@@ -87,18 +91,72 @@ a {
     padding: 1.5rem 0 1rem 0;
   }
 }
-
-@media screen and (max-width: 767px) {
-  p {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-    font-weight: 400;
+@media screen and (min-width: 1280px) {
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    padding: 1.5rem 0 1rem 0;
   }
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   p {
     font-size: 0.875rem;
     line-height: 1.375rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.header {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
+}
+.header__logo {
+  width: 7.5rem;
+  height: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin: 1rem 0 0.25rem 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__logo {
+    margin-left: 1rem;
   }
 }
 
@@ -148,22 +206,12 @@ a {
     font-size: 1.25rem;
   }
 }
-
-.header {
-  background-color: #323232;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
+@media screen and (min-width: 1280px) {
+  .navbar {
+    width: 30%;
+  }
+  .navbar__li {
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -186,19 +234,23 @@ a {
 @media screen and (min-width: 768px) {
   .banner {
     height: 70vh;
+    padding-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .banner {
+    height: 100vh;
   }
 }
 
 .main {
   padding: 1rem;
 }
-@media screen and (max-width: 767px) {
-  .main__image {
-    width: 100%;
-  }
-  .main__subtext {
-    padding: 0.5rem;
-  }
+.main__image {
+  width: 100%;
+}
+.main__subtext {
+  padding: 0.5rem;
 }
 @media screen and (min-width: 768px) {
   .main__image-container {
@@ -214,15 +266,31 @@ a {
     font-weight: bold;
   }
 }
+@media screen and (min-width: 1280px) {
+  .main__title {
+    padding-left: 5rem;
+  }
+  .main__image-container {
+    width: 75%;
+  }
+  .main__image {
+    max-height: 500px;
+  }
+  .main__text {
+    width: 75%;
+    font-weight: 500;
+  }
+  .main__subtext {
+    font-weight: 600;
+  }
+}
 
 .about {
   margin-bottom: 1rem;
 }
-@media screen and (max-width: 767px) {
-  .about__description {
-    padding-bottom: 1rem;
-    font-weight: medium;
-  }
+.about__description {
+  padding-bottom: 1rem;
+  font-weight: medium;
 }
 @media screen and (min-width: 768px) {
   .about {
@@ -233,21 +301,38 @@ a {
     gap: 1rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .about {
+    margin: 0 7rem;
+  }
+  .about__title {
+    padding-left: 3.5rem;
+  }
+  .about__descriptions {
+    padding: 1rem 2.5rem;
+    display: flex;
+    gap: 3rem;
+  }
+  .about__description {
+    color: #323232;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    padding: 0 1rem;
+  }
+}
 
 .gallery {
   background-color: #FAFAFA;
 }
-@media screen and (max-width: 767px) {
-  .gallery__images {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-  }
-  .gallery__image {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
+.gallery__images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.gallery__image {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
   .gallery__images {
@@ -259,6 +344,15 @@ a {
   }
   .gallery__image {
     width: 30%;
+    padding-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery {
+    padding: 0 3rem;
+  }
+  .gallery__images {
+    padding: 0 1.5rem;
   }
 }
 
@@ -313,5 +407,28 @@ a {
     position: absolute;
     top: 3rem;
     right: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer-container {
+    padding: 0 2.5rem;
+  }
+  .footer__addresses {
+    padding: 0 5.2rem;
+  }
+  .footer__addresses .address {
+    margin-right: 3rem;
+  }
+  .footer__addresses .address__heading {
+    padding-bottom: 2rem;
+    font-weight: bold;
+  }
+  .footer__logo {
+    position: absolute;
+    top: 3rem;
+    right: 7rem;
+  }
+  .footer__copyright {
+    padding: 0 5.2rem;
   }
 }/*# sourceMappingURL=bio.css.map */

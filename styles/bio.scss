@@ -5,18 +5,6 @@
 @use "./partials/navbar" as *;
 @use "./partials/typography";
 
-.header {
-  background-color: $primary-color;
-  @include flex(column, center, center);
-  padding: 1rem;
-
-  //tablet
-  @include tablet {
-    @include flex(row, flex-start, center);
-    gap: 1rem;
-  }
-}
- 
 //Banner Image Style
 .banner {
   padding: 1rem;
@@ -31,37 +19,58 @@
   background-repeat: no-repeat;
   @include flex(row, flex-start, center);
   &__title {
-    color: $button-text;
+    color: $primary-color-light;
     margin: auto 0;
   }
-  @include tablet{
+  @include tablet {
     height: 70vh;
+    padding-left: 2rem;
+  }
+  @include desktop {
+    height: 100vh;
   }
 }
 
 .main {
   padding: 1rem;
-  @include mobile {
-    &__image {
-      width: 100%;
-    }
-    &__subtext {
-      padding: 0.5rem;
-    }
+  &__image {
+    width: 100%;
   }
+  &__subtext {
+    padding: 0.5rem;
+  }
+
   //tablet
   @include tablet {
-    &__image-container{
+    &__image-container {
       width: 85%;
       margin: 0 auto;
       padding-bottom: 1rem;
     }
-    &__image{
+    &__image {
       width: 100%;
     }
-    &__text{
+    &__text {
       padding: 1rem 0;
       font-weight: bold;
+    }
+  }
+  @include desktop {
+    &__title {
+      padding-left: 5rem;
+    }
+    &__image-container {
+      width: 75%;
+    }
+    &__image {
+      max-height: 500px;
+    }
+    &__text {
+      width: 75%;
+      font-weight: 500;
+    }
+    &__subtext {
+      font-weight: 600;
     }
   }
 }
@@ -69,11 +78,9 @@
 //About Section
 .about {
   margin-bottom: 1rem;
-  @include mobile {
-    &__description {
-      padding-bottom: 1rem;
-      font-weight: medium;
-    }
+  &__description {
+    padding-bottom: 1rem;
+    font-weight: medium;
   }
   //tablet
   @include tablet {
@@ -83,20 +90,37 @@
       gap: 1rem;
     }
   }
+  @include desktop {
+    margin: 0 7rem;
+    &__title {
+      padding-left: 3.5rem;
+    }
+    &__descriptions {
+      padding: 1rem 2.5rem;
+      display: flex;
+      gap: 3rem;
+    }
+    &__description {
+      color: $primary-color-dark;
+      font-size: 1rem;
+      line-height: 1.75rem;
+      padding: 0 1rem;
+    }
+  }
 }
 
 //Gallery
 .gallery {
   background-color: $background-alternative-light;
-  @include mobile {
-    &__images {
-      @include flex(column, center);
-    }
-    &__image {
-      width: 100%;
-      margin-bottom: 2rem;
-    }
+  // @include mobile {
+  &__images {
+    @include flex(column, center);
   }
+  &__image {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  // }
   //tablet
   @include tablet {
     &__images {
@@ -105,6 +129,14 @@
     }
     &__image {
       width: 30%;
+      padding-bottom: 1rem;
+    }
+  }
+  //desktop
+  @include desktop {
+    padding: 0 3rem;
+    &__images {
+      padding: 0 1.5rem;
     }
   }
 }
@@ -113,10 +145,10 @@
 .footer {
   position: relative;
   padding: 1rem;
-  background-color: $primary-color;
-  color: $button-text;
+  background-color: $primary-color-dark;
+  color: $primary-color-light;
   &__title {
-    color: $button-text;
+    color: $primary-color-light;
   }
   &__icons {
     @include flex(row, flex-start);
@@ -135,7 +167,7 @@
       @include flex(row, flex-start, center);
       gap: 3rem;
     }
-    &__icons{
+    &__icons {
       padding-top: 1rem;
     }
     &__icon {
@@ -146,14 +178,38 @@
       @include flex(row);
       gap: 2rem;
     }
-    .address__mailto{
-        padding: 1.5rem 0 2.5rem 0;
+    .address__mailto {
+      padding: 1.5rem 0 2.5rem 0;
     }
-    
+
     &__logo {
       position: absolute;
       top: 3rem;
       right: 2rem;
     }
   }
+  //desktop
+  @include desktop {
+    &-container {
+      padding: 0 2.5rem;
+    }
+    &__addresses {
+      padding: 0 5.2rem;
+      .address{
+        margin-right: 3rem;
+      &__heading {
+        padding-bottom: 2rem;
+        font-weight: bold;
+      }
+    }
+  }
+  &__logo{
+    position: absolute;
+    top: 3rem;
+    right: 7rem;
+  }
+  &__copyright {
+    padding: 0 5.2rem;
+  }
+}
 }

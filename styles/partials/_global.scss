@@ -3,6 +3,7 @@
 
 body {
   font-family: $primary-font;
+  color: $primary-color-dark;
 }
 
 ul {
@@ -12,49 +13,56 @@ a {
   text-decoration: none; // remove underline from links
   color: $link-text;
 }
-.header__logo {
-  width: 7.5rem;
-  height: 1.25rem;
-  margin-bottom: 0.5rem;
-}
 
-//Global font style for mobile
+
+//Global font styles
 h1 {
-  @include mobile {
     font-size: 1.5rem;
-    font-weight: bold;
     line-height: 2rem;
+    font-weight: bold;
     padding: 1.5rem 0 1rem 0;
-  }
-  @include tablet {
+  @include tablet{
     font-size: 3.75rem;
     line-height: 4.25rem;
     padding: 3rem 0 2.25rem 0;
   }
+  @include desktop{
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    padding: 3rem 0 2.25rem 1.5rem;
+  }
 }
 h2 {
-  @include mobile {
     font-size: 1.5rem;
     font-weight: bold;
     line-height: 2rem;
     padding: 1.5rem 0 1rem 0;
-  }
   @include tablet {
     font-size: 2.25rem;
     font-weight: bold;
     line-height: 2.75rem;
     padding: 3rem 0 2.25rem 0;
   }
+  @include desktop{
+    font-size: 2.5rem; //changed the font-size from stylesheet to match it with the mockup
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding: 3rem 0 2.25rem 2.5rem;
+  }
 }
 
 h3 {
-  @include mobile {
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.375rem;
     padding: 1.5rem 0 1rem 0;
-  }
   @include tablet {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    padding: 1.5rem 0 1rem 0;
+  }
+  @include desktop {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
@@ -62,13 +70,15 @@ h3 {
   }
 }
 p {
-  @include mobile {
     font-size: 0.8125rem;
     line-height: 1.125rem;
     font-weight: 400;
-  }
-  @include tablet {
+    @include tablet {
     font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  @include desktop {
+    font-size: 0.875rem; //changed the style to match with mockup
     line-height: 1.375rem;
   }
 }
@@ -80,8 +90,8 @@ p {
 //   line-height: 1.25rem;
 //   height: 2.5rem;
 //   border-radius: 0.25rem;
-//   background-color: $primary-color;
-//   color: $button-text;
+//   background-color: $primary-color-dark-dark;
+//   color: $primary-color-light;
 //   &:hover {
 //     background-color: $button-hover-color;
 //   }

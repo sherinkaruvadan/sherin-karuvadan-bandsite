@@ -48,8 +48,6 @@ h1 {
 }
 @media screen and (min-width: 1280px) {
   h1 {
-    font-size: 3.75rem;
-    line-height: 4.25rem;
     padding: 3rem 0 2.25rem 1.5rem;
   }
 }
@@ -63,7 +61,6 @@ h2 {
 @media screen and (min-width: 768px) {
   h2 {
     font-size: 2.25rem;
-    font-weight: bold;
     line-height: 2.75rem;
     padding: 3rem 0 2.25rem 0;
   }
@@ -71,8 +68,6 @@ h2 {
 @media screen and (min-width: 1280px) {
   h2 {
     font-size: 2.5rem;
-    line-height: 2.75rem;
-    font-weight: 700;
     padding: 3rem 0 2.25rem 2.5rem;
   }
 }
@@ -91,15 +86,6 @@ h3 {
     padding: 1.5rem 0 1rem 0;
   }
 }
-@media screen and (min-width: 1280px) {
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2rem;
-    padding: 1.5rem 0 1rem 0;
-  }
-}
-
 p {
   font-size: 0.8125rem;
   line-height: 1.125rem;
@@ -111,13 +97,6 @@ p {
     line-height: 1.375rem;
   }
 }
-@media screen and (min-width: 1280px) {
-  p {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-  }
-}
-
 .header {
   background-color: #323232;
   display: flex;
@@ -171,6 +150,8 @@ p {
 }
 .navbar__li {
   padding-top: 1.5rem;
+  width: 50%;
+  text-align: center;
   position: relative;
 }
 .navbar__a {
@@ -201,6 +182,7 @@ p {
   }
   .navbar__li {
     padding-bottom: 0.5rem;
+    width: auto;
   }
   .navbar__a {
     font-size: 1.25rem;
@@ -212,112 +194,7 @@ p {
   }
   .navbar__li {
     padding-bottom: 0.5rem;
-  }
-}
-
-.banner {
-  padding: 1rem;
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
-  width: 100%;
-  height: 50vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-.banner__title {
-  color: #FFFFFF;
-  margin: auto 0;
-}
-@media screen and (min-width: 768px) {
-  .banner {
-    height: 70vh;
-    padding-left: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .banner {
-    height: 100vh;
-  }
-}
-
-.main {
-  padding: 1rem;
-}
-.main__image {
-  width: 100%;
-}
-.main__subtext {
-  padding: 0.5rem;
-}
-@media screen and (min-width: 768px) {
-  .main__image-container {
-    width: 85%;
-    margin: 0 auto;
-    padding-bottom: 1rem;
-  }
-  .main__image {
-    width: 100%;
-  }
-  .main__text {
-    padding: 1rem 0;
-    font-weight: bold;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .main__title {
-    padding-left: 5rem;
-  }
-  .main__image-container {
-    width: 75%;
-  }
-  .main__image {
-    max-height: 500px;
-  }
-  .main__text {
-    width: 75%;
-    font-weight: 500;
-  }
-  .main__subtext {
-    font-weight: 600;
-  }
-}
-
-.about {
-  margin-bottom: 1rem;
-}
-.about__description {
-  padding-bottom: 1rem;
-  font-weight: medium;
-}
-@media screen and (min-width: 768px) {
-  .about {
-    margin: 0 5rem;
-  }
-  .about__descriptions {
-    display: flex;
-    gap: 1rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .about {
-    margin: 0 7rem;
-  }
-  .about__title {
-    padding-left: 3.5rem;
-  }
-  .about__descriptions {
-    padding: 1rem 2.5rem;
-    display: flex;
-    gap: 3rem;
-  }
-  .about__description {
-    color: #323232;
-    font-size: 1rem;
-    line-height: 1.75rem;
-    padding: 0 1rem;
+    width: auto;
   }
 }
 
@@ -430,5 +307,111 @@ p {
   }
   .footer__copyright {
     padding: 0 5.2rem;
+  }
+}
+
+.banner {
+  padding: 1rem;
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.banner__title {
+  color: #FFFFFF;
+  margin: auto 0;
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    height: 70vh;
+    padding-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .banner {
+    height: 100vh;
+  }
+}
+
+.main {
+  padding: 1rem;
+}
+.main__image {
+  width: 100%;
+}
+.main__subtext {
+  padding: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .main__image-container {
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+  }
+  .main__image {
+    width: 100%;
+  }
+  .main__text {
+    padding: 1rem 0;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__title {
+    padding-left: 5rem;
+  }
+  .main__image-container {
+    width: 75%;
+  }
+  .main__image {
+    max-height: 500px;
+  }
+  .main__text {
+    width: 75%;
+    font-weight: 500;
+  }
+  .main__subtext {
+    font-weight: 600;
+  }
+}
+
+.about {
+  margin-bottom: 1rem;
+}
+.about__description {
+  padding-bottom: 1rem;
+  font-weight: medium;
+}
+@media screen and (min-width: 768px) {
+  .about {
+    margin: 0 5rem;
+  }
+  .about__descriptions {
+    display: flex;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about {
+    margin: 0 7rem;
+  }
+  .about__title {
+    padding-left: 3.5rem;
+  }
+  .about__descriptions {
+    padding: 1rem 2.5rem;
+    display: flex;
+    gap: 3rem;
+  }
+  .about__description {
+    color: #323232;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    padding: 0 1rem;
   }
 }/*# sourceMappingURL=bio.css.map */

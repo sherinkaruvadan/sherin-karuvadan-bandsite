@@ -1,9 +1,12 @@
 @use "./partials/variables" as *;
+@use "./partials/typography";
 @use "./partials/resets";
 @use "./partials/mixin" as *;
 @use "./partials/global" as *;
-@use "./partials/navbar" as *;
-@use "./partials/typography";
+@use "./partials/navbar";
+@use "./partials/gallery";
+@use "./partials/footer";
+
 
 //Banner Image Style
 .banner {
@@ -107,109 +110,4 @@
       padding: 0 1rem;
     }
   }
-}
-
-//Gallery
-.gallery {
-  background-color: $background-alternative-light;
-  // @include mobile {
-  &__images {
-    @include flex(column, center);
-  }
-  &__image {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  // }
-  //tablet
-  @include tablet {
-    &__images {
-      @include flex(row, space-around);
-      flex-wrap: wrap;
-    }
-    &__image {
-      width: 30%;
-      padding-bottom: 1rem;
-    }
-  }
-  //desktop
-  @include desktop {
-    padding: 0 3rem;
-    &__images {
-      padding: 0 1.5rem;
-    }
-  }
-}
-
-//Footer
-.footer {
-  position: relative;
-  padding: 1rem;
-  background-color: $primary-color-dark;
-  color: $primary-color-light;
-  &__title {
-    color: $primary-color-light;
-  }
-  &__icons {
-    @include flex(row, flex-start);
-    gap: 2.5rem;
-  }
-  .address {
-    &__mailto {
-      padding: 0.5rem 0;
-    }
-  }
-  &__logo {
-    padding: 1rem 0;
-  }
-  @include tablet {
-    &-container {
-      @include flex(row, flex-start, center);
-      gap: 3rem;
-    }
-    &__icons {
-      padding-top: 1rem;
-    }
-    &__icon {
-      width: 2.2rem;
-      height: 2.2rem;
-    }
-    &__addresses {
-      @include flex(row);
-      gap: 2rem;
-    }
-    .address__mailto {
-      padding: 1.5rem 0 2.5rem 0;
-    }
-
-    &__logo {
-      position: absolute;
-      top: 3rem;
-      right: 2rem;
-    }
-  }
-  //desktop
-  @include desktop {
-    &-container {
-      padding: 0 2.5rem;
-    }
-    &__addresses {
-      padding: 0 5.2rem;
-      .address{
-        margin-right: 3rem;
-      &__heading {
-        padding-bottom: 2rem;
-        font-weight: bold;
-      }
-    }
-  }
-  &__logo{
-    position: absolute;
-    top: 3rem;
-    right: 7rem;
-  }
-  &__copyright {
-    padding: 0 5.2rem;
-  }
-}
 }

@@ -1,0 +1,35 @@
+//Gallery
+@use "./variables" as *;
+@use "./mixin" as *;
+.gallery {
+    background-color: $background-alternative-light;
+    // @include mobile {
+    &__images {
+      @include flex(column, center);
+    }
+    &__image {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    // }
+    //tablet
+    @include tablet {
+      &__images {
+        @include flex(row, space-around);
+        flex-wrap: wrap;
+      }
+      &__image {
+        width: 30%;
+        padding-bottom: 1rem;
+      }
+    }
+    //desktop
+    @include desktop {
+      padding: 0 3rem;
+      &__images {
+        padding: 0 1.5rem;
+      }
+    }
+  }
+  
+  

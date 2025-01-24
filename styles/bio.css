@@ -171,7 +171,6 @@ p {
 }
 .navbar__a:active {
   color: #FFFFFF;
-  transform: scale(1.5);
 }
 .navbar__a:hover + .navbar__underline {
   display: block; /* Show underline on hover */
@@ -210,6 +209,12 @@ p {
 .gallery__image {
   width: 100%;
   margin-bottom: 1rem;
+  filter: grayscale(70%);
+  transition: all 0.3s ease;
+}
+.gallery__image:hover {
+  filter: grayscale(0);
+  transform: translateY(-0.625rem);
 }
 @media screen and (min-width: 768px) {
   .gallery__images {
@@ -256,6 +261,9 @@ p {
   padding: 1rem 0;
 }
 @media screen and (min-width: 768px) {
+  .footer {
+    padding: 0 2.5rem;
+  }
   .footer-container {
     display: flex;
     flex-direction: row;
@@ -283,7 +291,7 @@ p {
   .footer__logo {
     position: absolute;
     top: 3rem;
-    right: 2rem;
+    right: 3rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -359,6 +367,9 @@ p {
   .main__text {
     padding: 1rem 0;
     font-weight: bold;
+  }
+  .main__subtext {
+    font-weight: 600;
   }
 }
 @media screen and (min-width: 1280px) {

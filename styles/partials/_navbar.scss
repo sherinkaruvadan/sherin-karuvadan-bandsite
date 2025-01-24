@@ -57,7 +57,6 @@
   }
   &__a:active {
     color: $primary-color-light;
-    transform: scale(1.5);
   }
   &__a:hover + &__underline {
     display: block; /* Show underline on hover */

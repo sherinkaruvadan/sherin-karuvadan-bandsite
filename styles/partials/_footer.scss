@@ -22,7 +22,9 @@
     &__logo {
       padding: 1rem 0;
     }
+    //tablet footer style
     @include tablet {
+        padding: 0 2.5rem;
       &-container {
         @include flex(row, flex-start, center);
         gap: 3rem;
@@ -45,7 +47,7 @@
       &__logo {
         position: absolute;
         top: 3rem;
-        right: 2rem;
+        right: 3rem;
       }
     }
     //desktop

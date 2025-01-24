@@ -57,6 +57,9 @@
       padding: 1rem 0;
       font-weight: bold;
     }
+    &__subtext{
+      font-weight: 600;
+    }
   }
   @include desktop {
     &__title {

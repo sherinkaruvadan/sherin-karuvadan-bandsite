@@ -37,14 +37,15 @@
 .main {
   padding: 1rem;
   &__image-container{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
   &__image {
     width: 100%;
+    max-height:250px;
   }
   &__subtext {
-    padding: 0.5rem;
+    font-weight: 600;
   }
 
   //tablet
@@ -62,9 +63,6 @@
       padding: 1rem 0;
       font-weight: bold;
     }
-    &__subtext{
-      font-weight: 600;
-    }
   }
   @include desktop {
     &__title {
@@ -80,18 +78,16 @@
       width: 75%;
       font-weight: 500;
     }
-    &__subtext {
-      font-weight: 600;
-    }
   }
 }
 
 //About Section
 .about {
-  margin-bottom: 1rem;
   &__description {
     padding-bottom: 1rem;
-    font-weight: medium;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.3rem;
   }
   //tablet
   @include tablet {

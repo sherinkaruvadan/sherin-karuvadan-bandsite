@@ -3,75 +3,86 @@
 @use "./mixin" as *;
 
 .footer {
-    position: relative;
-    padding: 1rem;
-    background-color: $primary-color-dark;
+  position: relative;
+  padding: 1rem;
+  background-color: $primary-color-dark;
+  color: $primary-color-light;
+  &__title {
     color: $primary-color-light;
-    &__title {
-      color: $primary-color-light;
+  }
+  &__icons {
+    @include flex(row, flex-start);
+    gap: 2.5rem;
+    padding: 0.75rem 0;
+  }
+  .address {
+    &__heading {
+      padding: 1rem 0;
+      font-weight: bold;
     }
-    &__icons {
-      @include flex(row, flex-start);
-      gap: 2.5rem;
-    }
-    .address {
-      &__mailto {
-        padding: 0.5rem 0;
-      }
-    }
-    &__logo {
+    &__mailto {
       padding: 1rem 0;
     }
-    //tablet footer style
-    @include tablet {
-        padding: 0 2.5rem;
-      &-container {
-        @include flex(row, flex-start, center);
-        gap: 3rem;
-      }
-      &__icons {
-        padding-top: 1rem;
-      }
-      &__icon {
-        width: 2.2rem;
-        height: 2.2rem;
-      }
-      &__addresses {
-        @include flex(row);
-        gap: 2rem;
-      }
-      .address__mailto {
-        padding: 1.5rem 0 2.5rem 0;
-      }
-  
-      &__logo {
-        position: absolute;
-        top: 3rem;
-        right: 3rem;
-      }
+  }
+  &__logo {
+    padding: 1rem 0;
+  }
+  &__copyright {
+    padding-bottom: 2rem;
+  }
+  //tablet footer style
+  @include tablet {
+    padding: 0 2.5rem;
+    &-container {
+      @include flex(row, flex-start, center);
+      gap: 3rem;
     }
-    //desktop
-    @include desktop {
-      &-container {
-        padding: 0 2.5rem;
-      }
-      &__addresses {
-        padding: 0 5.2rem;
-        .address{
-          margin-right: 3rem;
+    &__icons {
+      padding-top: 1rem;
+    }
+    &__icon {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    &__addresses {
+      @include flex(row);
+      gap: 2rem;
+    }
+    .address__heading {
+      padding-bottom: 1.5rem;
+    }
+    .address__mailto {
+      padding: 1.5rem 0 2.5rem 0;
+    }
+
+    &__logo {
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+    }
+  }
+  //desktop
+  @include desktop {
+    &-container {
+      padding: 0 2.5rem;
+    }
+    &__addresses {
+      padding: 0 5.2rem;
+      .address {
+        margin-right: 3rem;
         &__heading {
           padding-bottom: 2rem;
           font-weight: bold;
         }
       }
     }
-    &__logo{
+    &__logo {
       position: absolute;
       top: 3rem;
       right: 7rem;
     }
     &__copyright {
-      padding: 0 5.2rem;
+      padding-left: 5.2rem;
     }
   }
-  }
+}

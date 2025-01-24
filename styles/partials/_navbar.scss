@@ -37,10 +37,11 @@
     padding-top: 1.5rem;
     width: 50%; 
     text-align: center; 
-    position: relative;
+    position: relative; //for hover underline effect 
   }
   &__a {
     text-align: center;
+    transition: transform 0.3s ease;
   }
   &__underline {
     // hover on links

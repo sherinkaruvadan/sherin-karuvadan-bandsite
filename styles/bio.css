@@ -156,6 +156,7 @@ p {
 }
 .navbar__a {
   text-align: center;
+  transition: transform 0.3s ease;
 }
 .navbar__underline {
   position: absolute;
@@ -253,12 +254,20 @@ p {
   justify-content: flex-start;
   align-items: stretch;
   gap: 2.5rem;
+  padding: 0.75rem 0;
+}
+.footer .address__heading {
+  padding: 1rem 0;
+  font-weight: bold;
 }
 .footer .address__mailto {
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 .footer__logo {
   padding: 1rem 0;
+}
+.footer__copyright {
+  padding-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
   .footer {
@@ -284,6 +293,9 @@ p {
     justify-content: flex-start;
     align-items: stretch;
     gap: 2rem;
+  }
+  .footer .address__heading {
+    padding-bottom: 1.5rem;
   }
   .footer .address__mailto {
     padding: 1.5rem 0 2.5rem 0;
@@ -314,7 +326,7 @@ p {
     right: 7rem;
   }
   .footer__copyright {
-    padding: 0 5.2rem;
+    padding-left: 5.2rem;
   }
 }
 
@@ -336,18 +348,22 @@ p {
 }
 @media screen and (min-width: 768px) {
   .banner {
-    height: 70vh;
+    height: 65vh;
     padding-left: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .banner {
-    height: 100vh;
+    height: 75vh;
   }
 }
 
 .main {
   padding: 1rem;
+}
+.main__image-container {
+  width: 80%;
+  margin: 0 auto;
 }
 .main__image {
   width: 100%;
@@ -357,12 +373,13 @@ p {
 }
 @media screen and (min-width: 768px) {
   .main__image-container {
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
     padding-bottom: 1rem;
   }
   .main__image {
     width: 100%;
+    max-height: 400px;
   }
   .main__text {
     padding: 1rem 0;

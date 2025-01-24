@@ -26,16 +26,20 @@
     margin: auto 0;
   }
   @include tablet {
-    height: 70vh;
+    height: 65vh;
     padding-left: 2rem;
   }
   @include desktop {
-    height: 100vh;
+    height: 75vh;
   }
 }
-
+//Main Section
 .main {
   padding: 1rem;
+  &__image-container{
+    width: 80%;
+    margin: 0 auto;
+  }
   &__image {
     width: 100%;
   }
@@ -46,12 +50,13 @@
   //tablet
   @include tablet {
     &__image-container {
-      width: 85%;
+      width: 80%;
       margin: 0 auto;
       padding-bottom: 1rem;
     }
     &__image {
       width: 100%;
+      max-height: 400px;
     }
     &__text {
       padding: 1rem 0;
@@ -68,7 +73,7 @@
     &__image-container {
       width: 75%;
     }
-    &__image {
+    &__image{
       max-height: 500px;
     }
     &__text {

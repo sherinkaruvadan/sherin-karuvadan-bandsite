@@ -1,12 +1,5 @@
 @use "./variables" as *;
 
-//Media Query for mobile
-// @mixin mobile {
-//     @media screen and (max-width: 767px) {
-//       @content;
-//     }
-//   }  
-
 //Media Query for tablet
 @mixin tablet {
   @media screen and (min-width: $breakpoint-tablet) {

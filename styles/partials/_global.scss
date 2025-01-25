@@ -27,8 +27,6 @@ h1 {
     padding: 3rem 0 2.25rem 0;
   }
   @include desktop{
-    // font-size: 3.75rem;
-    // line-height: 4.25rem;
     padding: 3rem 0 2.25rem 1.5rem;
   }
 }
@@ -39,14 +37,11 @@ h2 {
     padding: 1.5rem 0 1rem 0;
   @include tablet {
     font-size: 2.25rem;
-    // font-weight: bold;
     line-height: 2.75rem;
     padding: 3rem 0 2.25rem 0;
   }
   @include desktop{
-    font-size: 2.5rem; //changed the font-size from stylesheet to match it with the mockup
-    // line-height: 2.75rem;
-    // font-weight: 700;
+    font-size: 2.5rem; 
     padding: 3rem 0 2.25rem 2.5rem;
   }
 }
@@ -63,10 +58,7 @@ h3 {
     padding: 1.5rem 0 1rem 0;
   }
   @include desktop {
-    // font-size: 1.5rem;
-    // font-weight: 500;
-    // line-height: 2rem;
-    // padding: 1.5rem 0 1rem 0;
+    font-size: 1.5rem;
   }
 }
 p {
@@ -78,31 +70,6 @@ p {
     line-height: 1.375rem;
   }
   @include desktop {
-    // font-size: 0.875rem; 
-    // line-height: 1.375rem;
+    font-size: 0.875rem; 
   }
 }
-
-//button style
-// .button {
-//   font-size: 0.625rem;
-//   font-weight: bold;
-//   line-height: 1.25rem;
-//   height: 2.5rem;
-//   border-radius: 0.25rem;
-//   background-color: $primary-color-dark-dark;
-//   color: $primary-color-light;
-//   &:hover {
-//     background-color: $button-hover-color;
-//   }
-// }
-// .button {
-//     font-size: 0.75rem;
-//     font-weight: bold;
-//     line-height: 1.25rem;
-//     width: 9.375rem;
-//     padding: 0 2rem;
-//   }
-
-
- 

@@ -86,6 +86,12 @@ h3 {
     padding: 1.5rem 0 1rem 0;
   }
 }
+@media screen and (min-width: 1280px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
 p {
   font-size: 0.8125rem;
   line-height: 1.125rem;
@@ -97,6 +103,12 @@ p {
     line-height: 1.375rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  p {
+    font-size: 0.875rem;
+  }
+}
+
 .header {
   background-color: #323232;
   display: flex;
@@ -334,7 +346,7 @@ p {
   padding: 1rem;
   background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -348,13 +360,13 @@ p {
 }
 @media screen and (min-width: 768px) {
   .banner {
-    height: 65vh;
+    height: 75vh;
     padding-left: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .banner {
-    height: 75vh;
+    height: 85vh;
   }
 }
 

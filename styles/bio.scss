@@ -92,9 +92,16 @@
   //tablet
   @include tablet {
     margin: 0 5rem; //allign the content with image
+    &__title {
+      padding-left: 2rem;
+    }
     &__descriptions {
       display: flex;
-      gap: 1rem;
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+    &__description {
+      line-height: 1.5rem;
     }
   }
   @include desktop {
@@ -108,7 +115,6 @@
       gap: 3rem;
     }
     &__description {
-      color: $primary-color-dark;
       font-size: 1rem;
       line-height: 1.75rem;
       padding: 0 1rem;

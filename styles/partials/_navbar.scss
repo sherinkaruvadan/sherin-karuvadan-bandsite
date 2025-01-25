@@ -4,7 +4,7 @@
 .header {
   background-color: $primary-color-dark;
   @include flex(column, center, center);
-  padding: 1rem;
+  padding: 1rem 0;
   //tablet
   @include tablet {
     @include flex(row, flex-start, center);
@@ -41,7 +41,6 @@
   }
   &__a {
     text-align: center;
-    transition: transform 0.3s ease;
   }
   &__underline {
     // hover on links

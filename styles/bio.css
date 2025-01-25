@@ -103,7 +103,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -156,7 +156,6 @@ p {
 }
 .navbar__a {
   text-align: center;
-  transition: transform 0.3s ease;
 }
 .navbar__underline {
   position: absolute;
@@ -414,9 +413,16 @@ p {
   .about {
     margin: 0 5rem;
   }
+  .about__title {
+    padding-left: 2rem;
+  }
   .about__descriptions {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+  .about__description {
+    line-height: 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -432,7 +438,6 @@ p {
     gap: 3rem;
   }
   .about__description {
-    color: #323232;
     font-size: 1rem;
     line-height: 1.75rem;
     padding: 0 1rem;

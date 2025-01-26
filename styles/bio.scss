@@ -17,7 +17,7 @@
     ),
     url("../assets/images/hero-bio.jpg");
   width: 100%;
-  height: 60vh;
+  height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
   @include flex(row, flex-start, center);
@@ -26,11 +26,11 @@
     margin: auto 0;
   }
   @include tablet {
-    height: 75vh;
+    height: 67vh;
     padding-left: 2rem;
   }
   @include desktop {
-    height: 85vh;
+    height: 78vh;
   }
 }
 //Main Section
@@ -87,11 +87,11 @@
     padding-bottom: 1rem;
     font-weight: 400;
     font-size: 0.875rem;
-    line-height: 1.3rem;
+    line-height: 1.4rem;
   }
   //tablet
   @include tablet {
-    margin: 0 5rem; //allign the content with image
+    margin: 0 4.5rem; //allign the content with image
     &__title {
       padding-left: 2rem;
     }

@@ -336,4 +336,36 @@ p {
   .footer__copyright {
     padding-left: 5.2rem;
   }
+}
+
+.shows {
+  padding: 1.5rem;
+}
+.shows __title {
+  font-size: 1.75rem;
+}
+
+.show__title {
+  color: #AFAFAF;
+  padding-bottom: 0.5rem;
+}
+.show__detail {
+  padding-bottom: 1rem;
+}
+.show__divider {
+  height: 1px;
+  background-color: #E1E1E1;
+  margin: 1.5rem 0;
+}
+
+.button {
+  background: #323232;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  width: 9.375rem;
+  height: 2.5rem;
 }/*# sourceMappingURL=shows.css.map */

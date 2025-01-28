@@ -3,32 +3,6 @@
 @use "../styles/partials/resets";
 @use "../styles/partials/mixin" as *;
 @use "../styles/partials/global" as *;
+@use "../styles/partials/banner";
 @use "../styles/partials/navbar";
 @use "../styles/partials/footer";
-
-
-//Banner Image Style
-.banner-shows {
-  padding: 1rem;
-  background-image: linear-gradient(
-      rgba(50, 50, 50, 0.5),
-      rgba(50, 50, 50, 0.5)
-    ),
-    url("../assets/images/hero-shows.jpg");
-    color: $primary-color-light;
-  width: 100%;
-  height: 50vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  @include tablet {
-    height: 67vh;
-    padding-left: 2rem;
-  }
-  @include desktop {
-    height: 80vh;
-  }
-}
-//title width
-.banner-shows__title {
-  width: 60%;
-}

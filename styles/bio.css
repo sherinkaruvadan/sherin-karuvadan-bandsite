@@ -208,6 +208,44 @@ p {
   }
 }
 
+.banner {
+  padding: 1rem;
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+}
+.banner__title {
+  margin: auto 0;
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    height: 67vh;
+    padding-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .banner {
+    height: 80vh;
+  }
+}
+
+.banner--bio {
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.banner--shows {
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-shows.jpg");
+}
+.banner--shows__title {
+  width: 70%;
+}
+
 .gallery {
   background-color: #FAFAFA;
 }
@@ -338,34 +376,6 @@ p {
   }
   .footer__copyright {
     padding-left: 5.2rem;
-  }
-}
-
-.banner {
-  padding: 1rem;
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
-  width: 100%;
-  height: 50vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-.banner__title {
-  color: #FFFFFF;
-  margin: auto 0;
-}
-@media screen and (min-width: 768px) {
-  .banner {
-    height: 67vh;
-    padding-left: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .banner {
-    height: 80vh;
   }
 }
 

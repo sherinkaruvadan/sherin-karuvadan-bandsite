@@ -1,0 +1,45 @@
+// //Banner Image Styles
+@use "../partials/variables" as *;
+@use "../partials/mixin" as *;
+
+
+.banner {
+    padding: 1rem;
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $primary-color-light;
+    &__title {
+      margin: auto 0;
+    }
+    @include tablet {
+      height: 67vh;
+      padding-left: 2rem;
+    }
+    @include desktop {
+      height: 80vh;
+    }
+  }
+  //Banner Image of Bio Page
+  .banner--bio{
+    background-image: linear-gradient(
+        rgba(50, 50, 50, 0.5),
+        rgba(50, 50, 50, 0.5)
+      ),
+      url("../assets/images/hero-bio.jpg");
+      @include flex(row, flex-start, center);
+  }
+  //Banner Image of Shows Page
+  .banner--shows{
+    background-image: linear-gradient(
+      rgba(50, 50, 50, 0.5),
+      rgba(50, 50, 50, 0.5)
+    ),
+    url("../assets/images/hero-shows.jpg");
+    &__title {
+      width: 70%;
+    }
+  }
+ 
+  

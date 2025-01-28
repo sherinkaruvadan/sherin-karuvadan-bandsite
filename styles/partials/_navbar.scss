@@ -1,5 +1,5 @@
-@use "./variables" as *;
-@use "./mixin" as *;
+@use "../partials/variables" as *;
+@use "../partials/mixin" as *;
 
 .header {
   background-color: $primary-color-dark;
@@ -50,12 +50,11 @@
     width: 100%;
     height: 2px;
     background-color: $primary-color-light;
-    display: none;
   }
   &__underline--hidden {
     display: none;
   }
-  &__a:active {
+  &__a--active + &__underline { //need to check again
     color: $primary-color-light;
   }
   &__a:hover + &__underline {

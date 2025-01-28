@@ -1,11 +1,13 @@
+
 @use "./partials/variables" as *;
 @use "./partials/typography";
 @use "./partials/resets";
 @use "./partials/mixin" as *;
 @use "./partials/global" as *;
 @use "./partials/navbar";
-@use "./partials/gallery";
+@use "./partials/gallery";  
 @use "./partials/footer";
+
 
 
 //Banner Image Style

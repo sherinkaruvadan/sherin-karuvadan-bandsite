@@ -1,6 +1,6 @@
 //Footer
-@use "./variables" as *;
-@use "./mixin" as *;
+@use "../partials/variables" as *;
+@use "../partials/mixin" as *;
 
 .footer {
   position: relative;

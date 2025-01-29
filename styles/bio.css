@@ -240,7 +240,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .banner {
-    height: 67vh;
+    height: 70vh;
     padding-left: 2rem;
   }
 }
@@ -263,6 +263,11 @@ p {
 }
 .banner--shows__title {
   width: 70%;
+}
+.banner--shows__iframe {
+  width: 100%;
+  max-height: 25rem;
+  border: none;
 }
 
 .gallery {
@@ -314,9 +319,17 @@ textarea {
   border-radius: 0.25rem;
   border: 0.0625rem solid #E1E1E1;
 }
+@media screen and (min-width: 768px) {
+  input,
+  textarea {
+    min-height: 3rem;
+    padding: 1rem;
+  }
+}
 
 .comment {
   padding: 1rem;
+  position: relative;
 }
 .comment__avatar {
   width: 2.25rem;
@@ -325,6 +338,9 @@ textarea {
   background-image: url(../../assets/images/Mohan-muruge.jpg);
   background-position: center;
   background-size: contain;
+  position: absolute;
+  left: 10px;
+  bottom: 11.25rem;
 }
 .comment__form-container {
   display: flex;
@@ -340,6 +356,30 @@ textarea {
   width: 80%;
   color: #E1E1E1;
   font-weight: bold;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .comment__avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    left: 2rem;
+    bottom: 145px;
+  }
+  .comment .button {
+    position: absolute;
+    right: 0.0625rem;
+    top: 12.8125rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comment__form-container {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .comment__avatar {
+    left: 17.5rem;
+  }
 }
 
 .comments-container {
@@ -347,6 +387,7 @@ textarea {
 }
 .comments-container .comment {
   padding: 1rem;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -362,10 +403,12 @@ textarea {
   height: 2.25rem;
   border-radius: 50%;
   background-color: #E1E1E1;
-  margin-top: 0.5rem;
+  position: absolute;
+  left: 10px;
+  bottom: 60px;
 }
 .comments-container .comment__texts-container {
-  width: 75%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -374,6 +417,20 @@ textarea {
 .comments-container .comment__name {
   font-weight: bold;
   padding: 0.5rem 0;
+}
+.comments-container .comment__date {
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  color: #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .comments-container {
+    padding: 1rem 4rem;
+  }
+  .comments-container .comment__divider {
+    margin: 1.5rem;
+  }
 }
 
 .footer {

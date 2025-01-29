@@ -14,7 +14,7 @@
       margin: auto 0;
     }
     @include tablet {
-      height: 67vh;
+      height: 70vh;
       padding-left: 2rem;
     }
     @include desktop {
@@ -39,6 +39,11 @@
     url("../assets/images/hero-shows.jpg");
     &__title {
       width: 70%;
+    }
+    &__iframe{
+      width: 100%;
+      max-height: 25rem;
+      border: none;
     }
   }
  

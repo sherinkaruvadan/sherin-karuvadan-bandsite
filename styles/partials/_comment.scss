@@ -8,18 +8,23 @@ textarea {
   min-height: 2.25rem;
   border-radius: .25rem;
   border: .0625rem solid $link-text;
+  @include tablet{
+    min-height: 3rem;
+    padding: 1rem;
+  }
 }
 //comments form section
 .comment {
     padding: 1rem;
+    position: relative;
   &__avatar {
-    // width: 2.25rem;
-    // height: 2.25rem;
-    // border-radius: 50%;
     @include avatar(2.25rem, 2.25rem);
     background-image: url(../../assets/images/Mohan-muruge.jpg);
     background-position: center;
     background-size: contain;
+    position: absolute;
+    left: 10px;
+    bottom: 11.25rem;
   }
   &__form-container {
     @include flex(row, space-around);
@@ -29,13 +34,37 @@ textarea {
     width: 80%;
     color: $link-text;
     font-weight: bold;
+    position: relative;
   }
+  @include tablet{
+    &__avatar{
+      @include avatar(3rem, 3rem);
+      left: 2rem;
+      bottom: 145px;
+    }
+    .button{
+      position: absolute;
+      right: .0625rem;
+      top: 12.8125rem;
+    }
+  }
+  @include desktop{
+    &__form-container{
+      width: 60%;
+      margin: 0 auto;
+    }
+    &__avatar{
+      left: 17.5rem;
+    }
+  }
+
 }
 //comments container section
 .comments-container{
     padding: 1rem;
     .comment{
         padding: 1rem;
+        position: relative;
         @include flex(row, space-around);
         &__divider {
             height: 1px;
@@ -45,15 +74,31 @@ textarea {
         &__image{
             @include avatar(2.25rem, 2.25rem);
             background-color: $link-text;
-            margin-top: 0.5rem;
+            position: absolute;
+            left: 10px;
+            bottom: 60px;
         }
         &__texts-container{
-            width: 75%;
+            width: 80%;
             @include flex(column);
         }
         &__name{
             font-weight: bold;
             padding: 0.5rem 0;
         }
+        &__date{
+          position: absolute;
+          right: 1rem;
+          top: 1.5rem;
+          color: $link-text;
+        }
+    }
+    @include tablet{
+      padding: 1rem 4rem;
+      .comment{
+        &__divider{
+          margin: 1.5rem;
+        }
+      }
     }
 }

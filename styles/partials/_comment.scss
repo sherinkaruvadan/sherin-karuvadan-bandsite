@@ -4,19 +4,19 @@
 input,
 textarea {
   margin: 0.5rem 0 1rem 0;
-  padding: .75rem;
+  padding: 0.75rem;
   min-height: 2.25rem;
-  border-radius: .25rem;
-  border: .0625rem solid $link-text;
-  @include tablet{
+  border-radius: 0.25rem;
+  border: 0.0625rem solid $link-text;
+  @include tablet {
     min-height: 3rem;
     padding: 1rem;
   }
 }
 //comments form section
 .comment {
-    padding: 1rem;
-    position: relative;
+  padding: 1rem;
+  position: relative;
   &__avatar {
     @include avatar(2.25rem, 2.25rem);
     background-image: url(../../assets/images/Mohan-muruge.jpg);
@@ -36,69 +36,98 @@ textarea {
     font-weight: bold;
     position: relative;
   }
-  @include tablet{
-    &__avatar{
+  @include tablet {
+    &__avatar {
       @include avatar(3rem, 3rem);
       left: 2rem;
       bottom: 145px;
     }
-    .button{
+    .button {
       position: absolute;
-      right: .0625rem;
+      right: 0.0625rem;
       top: 12.8125rem;
     }
   }
-  @include desktop{
-    &__form-container{
+  @include desktop {
+    &__form-container {
       width: 60%;
       margin: 0 auto;
     }
-    &__avatar{
+    &__avatar {
       left: 17.5rem;
     }
   }
-
 }
 //comments container section
-.comments-container{
+.comments-container {
+  padding: 1rem;
+  .comment {
     padding: 1rem;
-    .comment{
-        padding: 1rem;
-        position: relative;
-        @include flex(row, space-around);
-        &__divider {
-            height: 1px;
-            background-color: $link-text;
-            margin: 1.5rem -1.5rem;
-          }
-        &__image{
-            @include avatar(2.25rem, 2.25rem);
-            background-color: $link-text;
-            position: absolute;
-            left: 10px;
-            bottom: 60px;
-        }
-        &__texts-container{
-            width: 80%;
-            @include flex(column);
-        }
-        &__name{
-            font-weight: bold;
-            padding: 0.5rem 0;
-        }
-        &__date{
-          position: absolute;
-          right: 1rem;
-          top: 1.5rem;
-          color: $link-text;
-        }
+    padding-right: 0;
+    position: relative;
+    @include flex(row, space-around);
+    &__divider {
+      height: 1px;
+      background-color: $link-text;
+      margin: 1.5rem -1.5rem;
     }
-    @include tablet{
-      padding: 1rem 4rem;
-      .comment{
-        &__divider{
-          margin: 1.5rem;
-        }
+    &__image {
+      @include avatar(2.25rem, 2.25rem);
+      background-color: $link-text;
+      position: absolute;
+      left: 0.5rem;
+      bottom: 3.75rem;
+    }
+    &__texts-container {
+      width: 80%;
+      @include flex(column);
+    }
+    &__name {
+      font-weight: bold;
+      padding: 0.5rem 0;
+    }
+    &__date {
+      position: absolute;
+      right: 4rem;
+      top: 1.5rem;
+      color: $link-text;
+    }
+  }
+  @include tablet {
+    padding: 1rem;
+    .comment {
+      &__divider {
+        margin: 1.5rem 1rem;
+        margin-right: 5rem;
+      }
+      &__image {
+        @include avatar(3rem, 3rem);
+        left: 0.5rem;
+        bottom: 3rem;
+      }
+      &__texts-container {
+        width: 81%;
+      }
+      &__date {
+        right: 5rem;
       }
     }
+  }
+  @include desktop {
+    .comment {
+      &__divider{
+        margin: 1.5rem 22rem;
+        margin-left: 15rem;
+      }
+      &__image{
+        left: 15rem;
+      }
+      &__texts-container {
+        width: 50%;
+      }
+      &__date{
+        right: 22rem;
+      }
+    }
+  }
 }

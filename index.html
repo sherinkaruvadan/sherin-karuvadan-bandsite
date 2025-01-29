@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/bio.css">
+    <script src="./scripts/index-page.js" defer></script>
     <title>BandSite</title>
 </head>
 
@@ -84,9 +85,26 @@
                 <img src="./assets/images/Photo-gallery-6.jpg" alt="Performing vocalist" class="gallery__image">
             </div>
         </section>
+        <!--Comment Section-->
+        <section class="comment">
+            <h2 class="comment__title">Join the Conversation</h2>
+            <div class="comment__form-container">
+                <div class="comment__avatar"></div>
+                <form id="comment__form-id" class="comment__form">
+                    <!--Name Input-->
+                    <label for="nameField">NAME</label>
+                    <input type="text" name="nameField" id="NameField" placeholder="Enter your name" required>
+                    <!--Comment Text Area-->
+                    <label for="commentField">COMMENT</label>
+                    <textarea name="commentField" id="commentField" placeholder="Add a new comment"></textarea>
+                    <!--Button-->
+                    <button type="submit" class="button">COMMENT</button>
+                </form>
+            </div>
+        </section>
     </main>
     <footer class="footer">
-        <div class="footer-container">
+        <div class="footer__container">
             <h2 class="footer__title">Get in Touch</h2>
             <div class="footer__icons">
                 <a href="https://www.instagram.com/">

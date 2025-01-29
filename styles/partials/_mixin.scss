@@ -22,3 +22,10 @@
   align-items: $align;
 }
 
+//mixin for avatar
+@mixin avatar($width, $height){
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+}
+

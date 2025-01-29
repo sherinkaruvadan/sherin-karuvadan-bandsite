@@ -34,7 +34,7 @@
   //tablet footer style
   @include tablet {
     padding: 0 2.5rem;
-    &-container {
+    &__container {
       @include flex(row, flex-start, center);
       gap: 3rem;
     }
@@ -64,7 +64,7 @@
   }
   //desktop
   @include desktop {
-    &-container {
+    &__container {
       padding: 0 2.5rem;
     }
     &__addresses {

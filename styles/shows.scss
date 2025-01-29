@@ -60,16 +60,3 @@
   }
 }
 
-.button {
-  background: $primary-color-dark;
-  color: $primary-color-light;
-  @include flex(row, center, center);
-  font-size: 0.75rem;
-  width: 100%;
-  height: 2.5rem;
-  border-radius: 0.25rem;
-  @include tablet {
-    max-width: 9.375rem;
-    padding: 0 2rem;
-  }
-}

@@ -1,0 +1,59 @@
+@use "./variables" as *;
+@use "./mixin" as *;
+
+input,
+textarea {
+  margin: 0.5rem 0 1rem 0;
+  padding: .75rem;
+  min-height: 2.25rem;
+  border-radius: .25rem;
+  border: .0625rem solid $link-text;
+}
+//comments form section
+.comment {
+    padding: 1rem;
+  &__avatar {
+    // width: 2.25rem;
+    // height: 2.25rem;
+    // border-radius: 50%;
+    @include avatar(2.25rem, 2.25rem);
+    background-image: url(../../assets/images/Mohan-muruge.jpg);
+    background-position: center;
+    background-size: contain;
+  }
+  &__form-container {
+    @include flex(row, space-around);
+  }
+  &__form {
+    @include flex(column);
+    width: 80%;
+    color: $link-text;
+    font-weight: bold;
+  }
+}
+//comments container section
+.comments-container{
+    padding: 1rem;
+    .comment{
+        padding: 1rem;
+        @include flex(row, space-around);
+        &__divider {
+            height: 1px;
+            background-color: $link-text;
+            margin: 1.5rem -1.5rem;
+          }
+        &__image{
+            @include avatar(2.25rem, 2.25rem);
+            background-color: $link-text;
+            margin-top: 0.5rem;
+        }
+        &__texts-container{
+            width: 75%;
+            @include flex(column);
+        }
+        &__name{
+            font-weight: bold;
+            padding: 0.5rem 0;
+        }
+    }
+}

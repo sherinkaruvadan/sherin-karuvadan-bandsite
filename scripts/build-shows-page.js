@@ -73,10 +73,8 @@ const shows = [
 //     showsContainer.appendChild(show);
 // }
 
-//function to create title and text within show card
-
 //select the parent element
-let main = document.querySelector("main");
+const main = document.querySelector("main");
 
 //create a container for shows using div tag
 let showsSection = document.createElement("section");
@@ -141,7 +139,7 @@ for (let i = 0; i < shows.length; i++) {
   let showCard = createShow(shows[i]);
 
   //create a divider
-  let divider = document.createElement("div");
+  const divider = document.createElement("div");
   divider.classList.add("show__divider");
   //append the card
   showsContainer.appendChild(showCard);

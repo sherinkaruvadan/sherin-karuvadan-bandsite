@@ -75,25 +75,32 @@ const shows = [
 
 //function to create title and text within show card
 
-//create a main element
-
-//create a container for shows using div tag
-let showContainer = document.createElement("section");
-showContainer.classList.add("shows");
-
 //select the parent element
 let main = document.querySelector("main");
-main.appendChild(showContainer);
+
+//create a container for shows using div tag
+let showsSection = document.createElement("section");
+showsSection.classList.add("shows");
+main.appendChild(showsSection);
 
 //create an h2 Element for Shows
-let sectionHeading = document.createElement("h2");
-sectionHeading.classList.add("shows__title");
-sectionHeading.textContent = "Shows";
-showContainer.appendChild(sectionHeading);
+let showsTitle = document.createElement("h2");
+showsTitle.classList.add("shows__title");
+showsTitle.textContent = "Shows";
+//append it with showsSection
+showsSection.appendChild(showsTitle);
 
+//create a container for holding shows
+let showsContainer = document.createElement('div');
+showsContainer.classList.add("shows__container");
+//append it with showsSection
+showsSection.appendChild(showsContainer);
+
+//function to create title and text tag
 function createHeadingAndText(title, detail) {
   const heading = document.createElement("p");
   heading.classList.add("show__title");
+//   heading.classList.add("show__title--hidden");
   heading.textContent = title;
   const text = document.createElement("p");
   text.classList.add("show__detail");
@@ -101,7 +108,7 @@ function createHeadingAndText(title, detail) {
   return { heading, text };
 }
 
-//
+//function to create a Card for each Show
 function createShow(show) {
   //create a div to hold each show
   const showCard = document.createElement("article");
@@ -119,22 +126,24 @@ function createShow(show) {
   showCard.appendChild(venueElements.text);
   showCard.appendChild(locationElements.heading);
   showCard.appendChild(locationElements.text);
+
+  //create a button element
+  const button = document.createElement("div");
+  button.classList.add("button");
+  button.textContent = "BUY TICKETS";
+  showCard.appendChild(button);
+
   return showCard;
 }
 
 //iterate over array of object
 for (let i = 0; i < shows.length; i++) {
   let showCard = createShow(shows[i]);
-  showContainer.appendChild(showCard);
-  //create a button element
-  const button = document.createElement("div");
-  button.classList.add("button");
-  button.textContent = "BUY TICKETS";
-  showContainer.appendChild(button);
 
   //create a divider
   let divider = document.createElement("div");
   divider.classList.add("show__divider");
-  showContainer.appendChild(divider)
+  //append the card
+  showsContainer.appendChild(showCard);
+  showsContainer.appendChild(divider);
 }
-

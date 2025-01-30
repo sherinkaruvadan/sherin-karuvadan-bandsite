@@ -94,6 +94,30 @@ showsContainer.classList.add("shows__container");
 //append it with showsSection
 showsSection.appendChild(showsContainer);
 
+//create the showTitles for tablet and desktop
+let dateTitle = document.createElement('p');
+dateTitle.classList.add("show__title-date");
+dateTitle.textContent = "DATE";
+let venueTitle = document.createElement('p');
+venueTitle.classList.add("show__title-venue");
+venueTitle.textContent = "VENUE";
+let locationTitle = document.createElement('p');
+locationTitle.classList.add("show__title-location");
+locationTitle.textContent = "LOCATION";
+
+//create a parent div to hold titles for tablet and desktop
+const parentTitle = document.createElement('div');
+parentTitle.classList.add("show__title--parent");
+
+//append all show titles to parent div
+
+parentTitle.appendChild(dateTitle);
+parentTitle.appendChild(venueTitle);
+parentTitle.appendChild(locationTitle);
+
+//append the div to div with class shows__container
+showsContainer.appendChild(parentTitle);
+
 //function to create title and text tag
 function createHeadingAndText(title, detail) {
   const heading = document.createElement("p");
@@ -145,3 +169,6 @@ for (let i = 0; i < shows.length; i++) {
   showsContainer.appendChild(showCard);
   showsContainer.appendChild(divider);
 }
+
+
+

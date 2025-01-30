@@ -368,6 +368,29 @@ p {
 .shows__title {
   font-size: 1.75rem;
 }
+.shows__container .show__title--parent {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .shows__container .show__title--parent {
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 5rem;
+    padding-bottom: 2rem;
+    color: #E1E1E1;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .shows__container .show__title--parent .show__title-date, .shows__container .show__title--parent .show__title-venue, .shows__container .show__title--parent .show__title-location {
+    font-size: 1rem;
+    color: #AFAFAF;
+    font-weight: bold;
+  }
+}
 @media screen and (min-width: 1280px) {
   .shows {
     display: flex;

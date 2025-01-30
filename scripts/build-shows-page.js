@@ -170,5 +170,11 @@ for (let i = 0; i < shows.length; i++) {
   showsContainer.appendChild(divider);
 }
 
-
+//function to add a modifier class to card on clicking 
+const cardSelected = document.querySelectorAll(".show");
+cardSelected.addEventListener("click", (event)=>{
+  // event.preventDefault();
+  console.log("Clicked");
+  cardSelected.classList.add('show--active');
+});
 

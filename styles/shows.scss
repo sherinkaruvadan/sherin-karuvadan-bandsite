@@ -51,6 +51,7 @@
   }
 }
 .show {
+  padding: 1rem;
   &__title {
     color: $secondary-color;
     font-size: 1rem;
@@ -68,6 +69,13 @@
     background-color: $link-text;
     margin: 1.5rem -1.5rem;
   }
+  &:hover{
+    background-color: $background-alternative-light;
+    cursor: pointer;
+  }
+  // &:active{
+  //   background-color: $link-text;
+  // }
   //tablet design
   @include tablet {
     display: flex;
@@ -80,4 +88,7 @@
       margin: 1.5rem 0;
     }
   }
+}
+.show--active{
+  background-color: $link-text;
 }

@@ -404,6 +404,9 @@ p {
   }
 }
 
+.show {
+  padding: 1rem;
+}
 .show__title {
   color: #AFAFAF;
   font-size: 1rem;
@@ -421,6 +424,10 @@ p {
   background-color: #E1E1E1;
   margin: 1.5rem -1.5rem;
 }
+.show:hover {
+  background-color: #FAFAFA;
+  cursor: pointer;
+}
 @media screen and (min-width: 768px) {
   .show {
     display: flex;
@@ -433,4 +440,8 @@ p {
   .show__divider {
     margin: 1.5rem 0;
   }
+}
+
+.show--active {
+  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */

@@ -27,9 +27,7 @@
         @include flex(row, space-between);
         gap: 5rem;
         padding-bottom: 2rem;
-        color: $link-text;
-       font-size: 1rem;
-        font-weight: bold;
+        padding-left: 0.75rem;
 
         .show__title-date, .show__title-venue,  .show__title-location {
           font-size: 1rem;
@@ -46,6 +44,7 @@
     }
     &__container {
       width: 75%;
+      text-align: center;
       padding-top: 4rem; //to match it with heading Shows
     }
   }
@@ -73,9 +72,9 @@
     background-color: $background-alternative-light;
     cursor: pointer;
   }
-  // &:active{
-  //   background-color: $link-text;
-  // }
+  &:active{
+    background-color: $link-text;
+  }
   //tablet design
   @include tablet {
     display: flex;

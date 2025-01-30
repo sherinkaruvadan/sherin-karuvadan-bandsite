@@ -171,7 +171,7 @@ for (let i = 0; i < shows.length; i++) {
 }
 
 //function to add a modifier class to card on clicking 
-const cardSelected = document.querySelectorAll(".show");
+const cardSelected = document.querySelector(".show");
 cardSelected.addEventListener("click", (event)=>{
   // event.preventDefault();
   console.log("Clicked");

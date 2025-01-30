@@ -2,9 +2,9 @@
 const comments = [
   {
     image: "avatar",
-    name: "Isaac Tadesse",
-    date: "10/20/2023",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+    name: "Victor Pinto",
+    date: "11/02/2023",
+    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
   },
   {
     image: "avatar",
@@ -14,10 +14,10 @@ const comments = [
   },
   {
     image: "avatar",
-    name: "Victor Pinto",
-    date: "11/02/2023",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
+    name: "Isaac Tadesse",
+    date: "10/20/2023",
+    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+  }
 ];
 
 //create container for all comments
@@ -68,7 +68,7 @@ function commentCardSection() {
   //update commentsSection before appending new comments
   commentsSection.innerHTML = "";
 
-  for (let i = comments.length - 1; i >= 0; i--) {
+  for (let i = 0; i <comments.length; i++) {
     let commentCard = createCommentCard(comments[i]);
     //create a divider
     var divider = document.createElement("div");
@@ -94,7 +94,7 @@ function handleFormSubmit(event) {
     text: event.target.commentField.value,
   };
   //add comment object to array
-  comments.push(newComment);
+  comments.unshift(newComment);
   event.target.nameField.value ="";
   event.target.commentField.value = "";
   //call the function to update comments section

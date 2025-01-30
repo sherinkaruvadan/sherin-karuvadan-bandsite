@@ -34,6 +34,16 @@
           color: $secondary-color;
           font-weight: bold;
         }
+        .show__title-date{
+          padding-left: 0.5rem;
+        }
+        .show__title-venue{
+          padding-left: 3.75rem;
+        }
+        .show__title-location{
+          padding-right: 4rem;
+      
+        }
       }
     }
   }
@@ -72,8 +82,8 @@
     background-color: $background-alternative-light;
     cursor: pointer;
   }
-  &:active{
-    background-color: $link-text;
+  &--active{
+    background-color: $link-text; 
   }
   //tablet design
   @include tablet {
@@ -87,7 +97,4 @@
       margin: 1.5rem 0;
     }
   }
-}
-.show--active{
-  background-color: $link-text;
 }

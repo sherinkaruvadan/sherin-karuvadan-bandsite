@@ -20,7 +20,7 @@
 }
 
 body {
-  font-family: "NunitoSans";
+  font-family: "NunitoSans", Arial, Helvetica, sans-serif;
   color: #323232;
 }
 
@@ -125,6 +125,27 @@ p {
   .button {
     max-width: 9.375rem;
     padding: 0 2rem;
+  }
+}
+
+input,
+textarea {
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.75rem;
+  min-height: 2.25rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #E1E1E1;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 0.0625rem solid #323232;
+}
+@media screen and (min-width: 768px) {
+  input,
+  textarea {
+    min-height: 3rem;
+    padding: 1rem;
   }
 }
 
@@ -341,22 +362,6 @@ p {
   }
   .gallery__images {
     padding: 0 1.5rem;
-  }
-}
-
-input,
-textarea {
-  margin: 0.5rem 0 1rem 0;
-  padding: 0.75rem;
-  min-height: 2.25rem;
-  border-radius: 0.25rem;
-  border: 0.0625rem solid #E1E1E1;
-}
-@media screen and (min-width: 768px) {
-  input,
-  textarea {
-    min-height: 3rem;
-    padding: 1rem;
   }
 }
 
@@ -577,6 +582,9 @@ textarea {
   .footer__addresses .address__heading {
     padding-bottom: 2rem;
     font-weight: bold;
+  }
+  .footer__icons {
+    padding-left: 2.5rem;
   }
   .footer__logo {
     position: absolute;

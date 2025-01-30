@@ -171,10 +171,28 @@ for (let i = 0; i < shows.length; i++) {
 }
 
 //function to add a modifier class to card on clicking 
-const cardSelected = document.querySelector(".show");
-cardSelected.addEventListener("click", (event)=>{
-  // event.preventDefault();
-  console.log("Clicked");
-  cardSelected.classList.add('show--active');
+const cardSelected = document.querySelectorAll(".show");
+
+
+cardSelected.forEach((card)=>{
+  card.addEventListener("click",(event)=>{
+    cardSelected.forEach(anotherCard=>{
+      anotherCard.classList.remove('show--active');
+    })
+    card.classList.add('show--active');
+
+  })
 });
+// cardSelected.forEach((card)=>{
+//   card.addEventListener("click",(event)=>{
+//     card.classList.remove('show--active');
+//   })
+// });
+
+
+// cardSelected.addEventListener("click", (event)=>{
+//   // event.preventDefault();
+//   console.log("Clicked");
+//   cardSelected.classList.add('show--active');
+// });
 

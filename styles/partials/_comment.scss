@@ -1,18 +1,6 @@
 @use "./variables" as *;
 @use "./mixin" as *;
 
-input,
-textarea {
-  margin: 0.5rem 0 1rem 0;
-  padding: 0.75rem;
-  min-height: 2.25rem;
-  border-radius: 0.25rem;
-  border: 0.0625rem solid $link-text;
-  @include tablet {
-    min-height: 3rem;
-    padding: 1rem;
-  }
-}
 //comments form section
 .comment {
   padding: 1rem;
@@ -131,3 +119,4 @@ textarea {
     }
   }
 }
+

@@ -17,7 +17,7 @@ const comments = [
     name: "Isaac Tadesse",
     date: "10/20/2023",
     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  }
+  },
 ];
 
 //create container for all comments
@@ -68,7 +68,7 @@ function commentCardSection() {
   //update commentsSection before appending new comments
   commentsSection.innerHTML = "";
 
-  for (let i = 0; i <comments.length; i++) {
+  for (let i = 0; i < comments.length; i++) {
     let commentCard = createCommentCard(comments[i]);
     //create a divider
     var divider = document.createElement("div");
@@ -93,9 +93,23 @@ function handleFormSubmit(event) {
     date: new Date().toLocaleDateString(),
     text: event.target.commentField.value,
   };
+
+  //checking condition of string that has only white space in input field
+  if (
+    event.target.nameField.value.trim().length === 0 ||
+    event.target.commentField.value.trim().length === 0
+  ) {
+    event.target.nameField.classList.add("form__error");
+    event.target.commentField.classList.add("form__error");
+    event.target.nameField.value = "";
+    event.target.commentField.value = "";
+    return;
+  }
+  event.target.nameField.classList.remove("form__error");
+  event.target.commentField.classList.remove("form__error");
   //add comment object to array
   comments.unshift(newComment);
-  event.target.nameField.value ="";
+  event.target.nameField.value = "";
   event.target.commentField.value = "";
   //call the function to update comments section
   commentCardSection();
@@ -104,5 +118,14 @@ function handleFormSubmit(event) {
 //add event to form
 const commentForm = document.getElementById("comment__form-id");
 commentForm.addEventListener("submit", handleFormSubmit);
-
 commentCardSection();
+
+
+//Remove the error class when clicking inside the input field or text area
+document.getElementById('nameField').addEventListener("click",(event)=>{
+  nameField.classList.remove('form__error');
+});
+
+document.getElementById('commentField').addEventListener("click",(event)=>{
+  commentField.classList.remove('form__error');
+});

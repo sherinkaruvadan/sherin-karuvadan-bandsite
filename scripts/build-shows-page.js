@@ -183,16 +183,6 @@ cardSelected.forEach((card)=>{
 
   })
 });
-// cardSelected.forEach((card)=>{
-//   card.addEventListener("click",(event)=>{
-//     card.classList.remove('show--active');
-//   })
-// });
 
 
-// cardSelected.addEventListener("click", (event)=>{
-//   // event.preventDefault();
-//   console.log("Clicked");
-//   cardSelected.classList.add('show--active');
-// });
 

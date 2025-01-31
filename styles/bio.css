@@ -149,6 +149,10 @@ textarea:focus {
   }
 }
 
+.form__error {
+  border-color: red;
+}
+
 .header {
   background-color: #323232;
   display: flex;

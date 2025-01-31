@@ -149,6 +149,10 @@ textarea:focus {
   }
 }
 
+.form__error {
+  border-color: red;
+}
+
 .banner {
   padding: 1rem;
   width: 100%;

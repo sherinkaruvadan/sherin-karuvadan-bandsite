@@ -3,7 +3,6 @@
 @use "./mixin" as *;
 .gallery {
     background-color: $background-alternative-light;
-    // @include mobile {
     &__images {
       @include flex(column, center);
     }
@@ -17,7 +16,6 @@
         transform: translateY(-0.625rem);
       }
     }
-    // }
     //tablet
     @include tablet {
       &__images {

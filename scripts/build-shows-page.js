@@ -32,51 +32,10 @@ const shows = [
   },
 ];
 
-// for(let i=0;i<shows.length;i++){
-//     //create a div to hold each show
-//     const show = document.createElement("div");
-//     show.classList.add("show");
-
-//     //create a p tag for each show text
-//     //create a p tag for the date heading
-//     const date = document.createElement("p");
-//     date.classList.add("show__title");
-//     date.textContent="Date";
-//     //create a p tag for the date text
-//     const dateDetail = document.createElement("p");
-//     dateDetail.classList.add("show__detail");
-//     dateDetail.textContent=shows[i].date;
-//     //create a p tag for the venue heading
-//     const venue = document.createElement("p");
-//     venue.classList.add("show__title");
-//     venue.textContent="Venue";
-//     //create a p tag for the venue text
-//     const venueDetail = document.createElement("p");
-//     venueDetail.classList.add("show__detail");
-//     venueDetail.textContent=shows[i].venue;
-//     //create a p tag for the showLocation heading
-//     const showLocation = document.createElement("p");
-//     showLocation.classList.add("show__title");
-//     showLocation.textContent="Location";
-//     //create a p tag for the showLocation text
-//     const locationDetail = document.createElement("p");
-//     locationDetail.classList.add("show__detail");
-//     locationDetail.textContent=shows[i].showLocation;
-//     //append the p tags to the show div
-//     show.appendChild(date);
-//     show.appendChild(dateDetail);
-//     show.appendChild(venue);
-//     show.appendChild(venueDetail);
-//     show.appendChild(showLocation);
-//     show.appendChild(locationDetail);
-//     //append the show to the shows container
-//     showsContainer.appendChild(show);
-// }
-
 //select the parent element
 const main = document.querySelector("main");
 
-//create a container for shows using div tag
+//create a container for shows using section tag
 let showsSection = document.createElement("section");
 showsSection.classList.add("shows");
 main.appendChild(showsSection);
@@ -170,16 +129,15 @@ for (let i = 0; i < shows.length; i++) {
   showsContainer.appendChild(divider);
 }
 
-//function to add a modifier class to card on clicking 
+//add a modifier class to card on clicking 
 const cardSelected = document.querySelectorAll(".show");
-
 
 cardSelected.forEach((card)=>{
   card.addEventListener("click",(event)=>{
     cardSelected.forEach(anotherCard=>{
       anotherCard.classList.remove('show--active');
     })
-    card.classList.add('show--active');
+    card.classList.toggle('show--active');
 
   })
 });

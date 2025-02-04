@@ -437,7 +437,7 @@ textarea:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: stretch;
+  align-items: flex-start;
 }
 .comments-container .comment__divider {
   height: 1px;
@@ -451,7 +451,6 @@ textarea:focus {
   background-color: #E1E1E1;
   position: absolute;
   left: 0.5rem;
-  bottom: 3.75rem;
 }
 .comments-container .comment__texts-container {
   width: 80%;
@@ -482,8 +481,7 @@ textarea:focus {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    left: 0.5rem;
-    bottom: 3rem;
+    left: 1.25rem;
   }
   .comments-container .comment__texts-container {
     width: 81%;
@@ -498,7 +496,7 @@ textarea:focus {
     margin-left: 15rem;
   }
   .comments-container .comment__image {
-    left: 15rem;
+    left: 17rem;
   }
   .comments-container .comment__texts-container {
     width: 50%;

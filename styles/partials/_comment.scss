@@ -53,7 +53,7 @@
     padding: 1rem;
     padding-right: 0;
     position: relative;
-    @include flex(row, space-around);
+    @include flex(row, space-around, flex-start);
     &__divider {
       height: 1px;
       background-color: $link-text;
@@ -63,8 +63,7 @@
       @include avatar(2.25rem, 2.25rem);
       background-color: $link-text;
       position: absolute;
-      left: 0.5rem;
-      bottom: 3.75rem;
+      left: 0.5rem    
     }
     &__texts-container {
       width: 80%;
@@ -90,8 +89,7 @@
       }
       &__image {
         @include avatar(3rem, 3rem);
-        left: 0.5rem;
-        bottom: 3rem;
+        left: 1.25rem;
       }
       &__texts-container {
         width: 81%;
@@ -108,7 +106,7 @@
         margin-left: 15rem;
       }
       &__image{
-        left: 15rem;
+        left: 17rem;
       }
       &__texts-container {
         width: 50%;

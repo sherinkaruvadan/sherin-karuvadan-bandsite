@@ -39,7 +39,7 @@ const showsInstance = new BandSiteApi(API_KEY);
 //function to fetch show details
 async function fetchShows() {
   //call the class method
-  const articles = await showsInstance.getShows();  
+  const articles = await showsInstance.getShows();
   //iterate over array of object
   for (let i = 0; i < articles.length; i++) {
     let showCard = createShow(articles[i]);
@@ -53,17 +53,17 @@ async function fetchShows() {
   }
 
   //add a modifier class to card on clicking
-const cardSelected = document.querySelectorAll(".show");
-console.log(cardSelected);
+  const cardSelected = document.querySelectorAll(".show");
+  console.log(cardSelected);
 
-cardSelected.forEach((card) => {
-  card.addEventListener("click", (event) => {
-    cardSelected.forEach((anotherCard) => {
-      anotherCard.classList.remove("show--active");
+  cardSelected.forEach((card) => {
+    card.addEventListener("click", (event) => {
+      cardSelected.forEach((anotherCard) => {
+        anotherCard.classList.remove("show--active");
+      });
+      card.classList.add("show--active");
     });
-    card.classList.add("show--active");
   });
-});
 }
 
 fetchShows();
@@ -132,7 +132,10 @@ function createShow(show) {
   showCard.classList.add("show");
 
   //use createTitleAndDetail function to create the heading and text with values
-  const dateElements = createHeadingAndText("DATE", new Date(show.date).toDateString());
+  const dateElements = createHeadingAndText(
+    "DATE",
+    new Date(show.date).toDateString()
+  );
   const venueElements = createHeadingAndText("VENUE", show.place);
   const locationElements = createHeadingAndText("LOCATION", show.location);
 
@@ -164,6 +167,3 @@ function createShow(show) {
 //   showsContainer.appendChild(showCard);
 //   showsContainer.appendChild(divider);
 // }
-
-
-

@@ -51,6 +51,19 @@ async function fetchShows() {
     showsContainer.appendChild(showCard);
     showsContainer.appendChild(divider);
   }
+
+  //add a modifier class to card on clicking
+const cardSelected = document.querySelectorAll(".show");
+console.log(cardSelected);
+
+cardSelected.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    cardSelected.forEach((anotherCard) => {
+      anotherCard.classList.remove("show--active");
+    });
+    card.classList.add("show--active");
+  });
+});
 }
 
 fetchShows();
@@ -153,14 +166,4 @@ function createShow(show) {
 // }
 
 
-//add a modifier class to card on clicking
-const cardSelected = document.querySelectorAll(".show");
 
-cardSelected.forEach((card) => {
-  card.addEventListener("click", (event) => {
-    cardSelected.forEach((anotherCard) => {
-      anotherCard.classList.remove("show--active");
-    });
-    card.classList.toggle("show--active");
-  });
-});

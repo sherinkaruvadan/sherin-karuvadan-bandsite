@@ -26,14 +26,16 @@ const commentsInstance = new BandSiteApi(API_KEY);
 
 //functiom to fetch comments
 
-async function fetchComments(){
-
-  const articleComments =  await commentsInstance.getComments();
-  console.log(articleComments);
-  return articleComments;
+async function fetchComments() {
+  try {
+    const articleComments = await commentsInstance.getComments();
+    console.log(articleComments);
+    return articleComments;
+  } catch (error) {
+    console.error(error);
+  }
 }
 fetchComments();
-
 
 //create container for all comments
 let commentsSection = document.createElement("section");
@@ -56,14 +58,20 @@ function createCommentCard(comment) {
   const commentName = document.createElement("p");
   commentName.classList.add("comment__name");
   commentName.textContent = comment.name;
-  //text
+  //comment text
   const commentText = document.createElement("p");
   commentText.classList.add("comment__text");
   commentText.textContent = comment.comment;
   //date
   const commentDate = document.createElement("p");
   commentDate.classList.add("comment__date");
-  commentDate.textContent = new Date(comment.timestamp).toLocaleDateString();
+  commentDate.textContent = timeStamp(comment.timestamp);
+
+  //create a delete icon
+  const commentDelete = document.createElement("button");
+  commentDelete.classList.add("button__delete");
+  commentDelete.textContent = "DELETE";
+  commentDelete.addEventListener("click", ()=>handleCommentDelete(comment.id, commentDelete));
 
   //create a div to hold the name and text
   const commentNameText = document.createElement("div");
@@ -75,67 +83,72 @@ function createCommentCard(comment) {
   commentCard.appendChild(commentImage);
   commentCard.appendChild(commentNameText);
   commentCard.appendChild(commentDate);
-
+  commentCard.appendChild(commentDelete);
   return commentCard;
 }
 
 async function commentCardSection() {
-  //update commentsSection before appending new comments
-  commentsSection.innerHTML = "";
+  try {
+    //update commentsSection before appending new comments
+    commentsSection.innerHTML = "";
 
-  const commentsAPI = await fetchComments();
+    const commentsAPI = await fetchComments();
 
-  
-  // console.log(commentsAPI);
-
-  for (let i = 0; i < commentsAPI.length; i++) {
-    let commentCard = createCommentCard(commentsAPI[i]);
-    //create a divider
-    var divider = document.createElement("div");
-    divider.classList.add("comment__divider");
-    commentsSection.appendChild(divider);
-    //append each card to the parent section
-    commentsSection.appendChild(commentCard);
+    for (let i = 0; i < commentsAPI.length; i++) {
+      let commentCard = createCommentCard(commentsAPI[i]);
+      //create a divider
+      // let divider = document.createElement("div");
+      // divider.classList.add("comment__divider");
+      // commentsSection.appendChild(divider);
+      //append each card to the parent section
+      commentsSection.appendChild(commentCard);
+    }
+    // divider = document.createElement("div");
+    // divider.classList.add("comment__divider");
+    // commentsSection.appendChild(divider);
+  } catch (error) {
+    console.error(error);
   }
-  divider = document.createElement("div");
-  divider.classList.add("comment__divider");
-  commentsSection.appendChild(divider);
 }
-// commentCardSection();
 
 //function to add comment through form
 async function handleFormSubmit(event) {
   event.preventDefault();
 
+  const nameFieldEl = document.getElementById('nameField')
+  const commentFieldEl = document.getElementById('commentField')
+  
   const newComment = {
-    name: event.target.nameField.value,
-    comment: event.target.commentField.value,
+    name: nameFieldEl.value,
+    comment: commentFieldEl.value,
   };
-  console.log(newComment);
-  console.log(typeof newComment);
 
   //checking condition of string that has only white space in input field
   if (
-    event.target.nameField.value.trim().length === 0 ||
-    event.target.commentField.value.trim().length === 0
+    nameFieldEl.value.trim().length === 0 ||
+    commentFieldEl.value.trim().length === 0
   ) {
-    event.target.nameField.classList.add("form__error");
-    event.target.commentField.classList.add("form__error");
-    event.target.nameField.value = "";
-    event.target.commentField.value = "";
+    nameFieldEl.classList.add("form__error");
+    commentFieldEl.classList.add("form__error");
+    nameFieldEl.value = "";
+    commentFieldEl.value = "";
     return;
   }
-  event.target.nameField.classList.remove("form__error");
-  event.target.commentField.classList.remove("form__error");
-  //add comment object to array
+  nameFieldEl.classList.remove("form__error");
+  commentFieldEl.classList.remove("form__error");
 
-  const postComment = await commentsInstance.postComment(newComment);
+  try {
+    //add or post comment to the API
+    const postComment = await commentsInstance.postComment(newComment);
 
-  // comments.unshift(newComment);
-  event.target.nameField.value = "";
-  event.target.commentField.value = "";
-  //call the function to update comments section
-  commentCardSection();
+    // comments.unshift(newComment);
+    nameFieldEl.value = "";
+    commentFieldEl.value = "";
+    //call the function to update comments section
+    commentCardSection();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 //add event to form
@@ -143,12 +156,45 @@ const commentForm = document.getElementById("comment__form-id");
 commentForm.addEventListener("submit", handleFormSubmit);
 commentCardSection();
 
+// function to delete comment
+async function handleCommentDelete(commentId, buttonElement){
+  try{
+    const response = await commentsInstance.deleteComment(commentId)
+    const commentCard = buttonElement.closest(".comment");
+    const divider = buttonElement.closest(".comment__divider");
+    if(commentCard){
+      commentCard.remove();
+      divider.remove();
+    }
+    commentCardSection();
+  }catch(error){
+    console.error(error);
+  }
+}
 
 //Remove the error class when clicking inside the input field or text area
-document.getElementById('nameField').addEventListener("click",(event)=>{
-  nameField.classList.remove('form__error');
+document.getElementById("nameField").addEventListener("click", (event) => {
+  nameField.classList.remove("form__error");
 });
 
-document.getElementById('commentField').addEventListener("click",(event)=>{
-  commentField.classList.remove('form__error');
+document.getElementById("commentField").addEventListener("click", (event) => {
+  commentField.classList.remove("form__error");
 });
+
+
+//function to display the date from timestamp in a user friendly approach
+function timeStamp(timestamp) {
+  const now = new Date();
+  const diffInSeconds = Math.floor((now - timestamp) / 1000);
+  const minutes = Math.floor(diffInSeconds / 60);
+  const hours = Math.floor(minutes / 60);
+  if (minutes < 1) {
+    return "Just Now";
+  } else if (minutes < 60) {
+    return `${minutes} min ago`;
+  } else if (hours < 24) {
+    return `${hours} hour ago`;
+  } else {
+    return new Date(timestamp).toLocaleDateString();
+  }
+}

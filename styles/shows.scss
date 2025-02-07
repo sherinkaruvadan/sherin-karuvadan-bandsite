@@ -10,9 +10,10 @@
 
 //Show Card
 .shows {
-  padding: 1.5rem;
+  // padding: 1.5rem;
   &__title {
     font-size: 1.75rem;
+    padding-left: 1.5rem;
   }
   &__container {
     .show__title--parent {
@@ -20,6 +21,7 @@
     }
   }
   @include tablet {
+    padding: 1.5rem;
     &__container {
       .show__title--parent {
         position: relative;
@@ -29,20 +31,21 @@
         padding-bottom: 2rem;
         padding-left: 0.75rem;
 
-        .show__title-date, .show__title-venue,  .show__title-location {
+        .show__title-date,
+        .show__title-venue,
+        .show__title-location {
           font-size: 1rem;
           color: $secondary-color;
           font-weight: bold;
         }
-        .show__title-date{
-          padding-left: 0.5rem;
+        .show__title-date {
+          padding-left: 0.7rem;
         }
-        .show__title-venue{
+        .show__title-venue {
           padding-left: 3.75rem;
         }
-        .show__title-location{
+        .show__title-location {
           padding-right: 4rem;
-      
         }
       }
     }
@@ -60,7 +63,8 @@
   }
 }
 .show {
-  padding: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid $link-text;
   &__title {
     color: $secondary-color;
     font-size: 1rem;
@@ -73,17 +77,17 @@
       font-weight: bold;
     }
   }
-  &__divider {
-    height: 1px;
-    background-color: $link-text;
-    margin: 1.5rem -1.5rem;
-  }
-  &:hover{
+  // &__divider {
+  //   height: 1px;
+  //   background-color: $link-text;
+  //   margin: 1.5rem -1.5rem;
+  // }
+  &:hover {
     background-color: $background-alternative-light;
     cursor: pointer;
   }
-  &--active{
-    background-color: $link-text; 
+  &--active {
+    background-color: $link-text;
   }
   //tablet design
   @include tablet {
@@ -93,8 +97,8 @@
     &__title {
       display: none;
     }
-    &__divider {
-      margin: 1.5rem 0;
-    }
+    // &__divider {
+    //   margin: 1.5rem 0;
+    // }
   }
 }

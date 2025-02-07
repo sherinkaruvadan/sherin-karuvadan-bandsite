@@ -2,118 +2,227 @@
 @use "./mixin" as *;
 
 //comments form section
-.comment {
-  padding: 1rem;
-  position: relative;
+.comments {
+  &__form-container {
+    // border-bottom: 1px solid $link-text;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+  }
   &__avatar {
     @include avatar(2.25rem, 2.25rem);
     background-image: url(../../assets/images/Mohan-muruge.jpg);
     background-position: center;
     background-size: contain;
-    position: absolute;
-    left: 10px;
-    bottom: 11.25rem;
-  }
-  &__form-container {
-    @include flex(row, space-around);
+    margin-top: 1.5rem;
   }
   &__form {
-    @include flex(column);
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
     color: $link-text;
     font-weight: bold;
+    padding-bottom: 1rem;
     position: relative;
+    // max-width: 600px;
   }
   @include tablet {
-    &__avatar {
-      @include avatar(3rem, 3rem);
-      left: 2rem;
-      bottom: 145px;
-    }
-    .button {
-      position: absolute;
-      right: 0.0625rem;
-      top: 12.8125rem;
-    }
-  }
-  @include desktop {
-    &__form-container {
-      width: 60%;
+    &__form-container{
+      width: 80%;
       margin: 0 auto;
     }
     &__avatar {
-      left: 17.5rem;
+      @include avatar(3rem, 3rem);
+    }
+  }
+  @include desktop{
+    &__form-container{
+      width: 50%;
     }
   }
 }
+
 //comments container section
 .comments-container {
-  padding: 1rem;
+  width: 100%;
+  border-top: 1px solid $link-text;
   .comment {
-    padding: 1rem;
-    padding-right: 0;
+    border-bottom: 1px solid $link-text;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
     position: relative;
-    @include flex(row, space-around, flex-start);
-    &__divider {
-      height: 1px;
-      background-color: $link-text;
-      margin: 1.5rem -1.5rem;
-    }
     &__image {
       @include avatar(2.25rem, 2.25rem);
       background-color: $link-text;
-      position: absolute;
-      left: 0.5rem    
+      flex-shrink: 0;
     }
     &__texts-container {
-      width: 80%;
-      @include flex(column);
+      width: 85%;
+      // max-width: 600px;
+      // flex-grow: 1;
     }
     &__name {
       font-weight: bold;
-      padding: 0.5rem 0;
+      padding-bottom: 0.5rem;
     }
     &__date {
       position: absolute;
-      right: 4rem;
-      top: 1.5rem;
+      right: 3rem;
       color: $link-text;
     }
   }
-  @include tablet {
-    padding: 1rem;
-    .comment {
-      &__divider {
-        margin: 1.5rem 1rem;
-        margin-right: 5rem;
-      }
-      &__image {
-        @include avatar(3rem, 3rem);
-        left: 1.25rem;
-      }
-      &__texts-container {
-        width: 81%;
-      }
-      &__date {
-        right: 5rem;
-      }
-    }
-  }
-  @include desktop {
-    .comment {
-      &__divider{
-        margin: 1.5rem 22rem;
-        margin-left: 15rem;
-      }
+  @include tablet{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    padding-right: 1rem;
+    .comment{
+      margin: 0 auto;
       &__image{
-        left: 17rem;
+        @include avatar(3rem, 3rem);
       }
-      &__texts-container {
-        width: 50%;
-      }
-      &__date{
-        right: 22rem;
-      }
-    }
+    } 
+  }
+  @include desktop{
+    width: 50%;
   }
 }
+.button{
+  @include tablet{
+    position: absolute;
+    right: 0;
+    bottom: -1.5rem;
+  }
+}
+.button__delete {
+  position: absolute;
+  background-color: maroon;
+  color: white;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 0.5rem;
+}
+
+//comments form section
+// .comment {
+//   padding: 1rem;
+//   position: relative;
+//   &__avatar {
+//     @include avatar(2.25rem, 2.25rem);
+//     background-image: url(../../assets/images/Mohan-muruge.jpg);
+//     background-position: center;
+//     background-size: contain;
+//     position: absolute;
+//     left: 10px;
+//     bottom: 11.25rem;
+//   }
+//   &__form-container {
+//     @include flex(row, space-around);
+//   }
+//   &__form {
+//     @include flex(column);
+//     width: 80%;
+//     color: $link-text;
+//     font-weight: bold;
+//     position: relative;
+//   }
+//   @include tablet {
+//     &__avatar {
+//       @include avatar(3rem, 3rem);
+//       left: 2rem;
+//       bottom: 145px;
+//     }
+//     .button {
+//       position: absolute;
+//       right: 0.0625rem;
+//       top: 12.8125rem;
+//     }
+//   }
+//   @include desktop {
+//     &__form-container {
+//       width: 60%;
+//       margin: 0 auto;
+//     }
+//     &__avatar {
+//       left: 17.5rem;
+//     }
+//   }
+// }
+// //comments container section
+// .comments-container {
+//   padding: 1rem;
+//   border-top: 1px solid red;
+//   .comment {
+//     border-bottom: 1px solid red;
+//     padding: 1rem;
+//     padding-right: 0;
+//     position: relative;
+//     @include flex(row, space-around, flex-start);
+//     &__divider {
+//       height: 1px;
+//       background-color: $link-text;
+//       margin: 1.5rem -1.5rem;
+//     }
+//     &__image {
+//       @include avatar(2.25rem, 2.25rem);
+//       background-color: $link-text;
+//       // position: absolute;
+//       // left: 0.5rem
+//     }
+//     &__texts-container {
+//       width: 80%;
+//       @include flex(column);
+//     }
+//     &__name {
+//       font-weight: bold;
+//       padding: 0.5rem 0;
+//     }
+//     &__date {
+//       position: absolute;
+//       right: 4rem;
+//       top: 1.5rem;
+//       color: $link-text;
+//     }
+//   }
+//   @include tablet {
+//     padding: 1rem;
+//     .comment {
+//       &__divider {
+//         margin: 1.5rem 1rem;
+//         margin-right: 5rem;
+//       }
+//       &__image {
+//         @include avatar(3rem, 3rem);
+//         left: 1.25rem;
+//       }
+//       &__texts-container {
+//         width: 81%;
+//       }
+//       &__date {
+//         right: 5rem;
+//       }
+//     }
+//   }
+//   @include desktop {
+//     .comment {
+//       &__divider{
+//         margin: 1.5rem 22rem;
+//         margin-left: 15rem;
+//       }
+//       &__image{
+//         left: 17rem;
+//       }
+//       &__texts-container {
+//         width: 50%;
+//       }
+//       &__date{
+//         right: 22rem;
+//       }
+//     }
+//   }
+// }

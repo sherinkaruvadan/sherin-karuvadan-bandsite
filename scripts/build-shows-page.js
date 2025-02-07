@@ -45,11 +45,11 @@ async function fetchShows() {
     let showCard = createShow(articles[i]);
 
     //create a divider
-    const divider = document.createElement("div");
-    divider.classList.add("show__divider");
+    // const divider = document.createElement("div");
+    // divider.classList.add("show__divider");
     //append the card
     showsContainer.appendChild(showCard);
-    showsContainer.appendChild(divider);
+    // showsContainer.appendChild(divider);
   }
 
   //add a modifier class to card on clicking
@@ -148,7 +148,7 @@ function createShow(show) {
   showCard.appendChild(locationElements.text);
 
   //create a button element
-  const button = document.createElement("div");
+  const button = document.createElement("button");
   button.classList.add("button");
   button.textContent = "BUY TICKETS";
   showCard.appendChild(button);

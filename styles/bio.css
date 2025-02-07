@@ -135,6 +135,7 @@ textarea {
   min-height: 2.25rem;
   border-radius: 0.25rem;
   border: 0.0625rem solid #E1E1E1;
+  background-color: #FAFAFA;
 }
 input:focus,
 textarea:focus {
@@ -351,6 +352,9 @@ textarea:focus {
   transform: translateY(-0.625rem);
 }
 @media screen and (min-width: 768px) {
+  .gallery__title {
+    padding-left: 1rem;
+  }
   .gallery__images {
     display: flex;
     flex-direction: row;
@@ -366,6 +370,9 @@ textarea:focus {
 @media screen and (min-width: 1280px) {
   .gallery {
     padding: 0 3rem;
+  }
+  .gallery__title {
+    padding-left: 2.5rem;
   }
   .gallery__images {
     padding: 0 1.5rem;
@@ -398,6 +405,9 @@ textarea:focus {
   position: relative;
 }
 @media screen and (min-width: 768px) {
+  .comments__title {
+    padding-left: 1rem;
+  }
   .comments__form-container {
     width: 80%;
     margin: 0 auto;
@@ -409,6 +419,9 @@ textarea:focus {
   }
 }
 @media screen and (min-width: 1280px) {
+  .comments__title {
+    padding-left: 5.5rem;
+  }
   .comments__form-container {
     width: 50%;
   }
@@ -416,7 +429,6 @@ textarea:focus {
 
 .comments-container {
   width: 100%;
-  border-top: 1px solid #E1E1E1;
 }
 .comments-container .comment {
   border-bottom: 1px solid #E1E1E1;
@@ -461,11 +473,28 @@ textarea:focus {
     height: 3rem;
     border-radius: 50%;
   }
+  .comments-container .comment__date {
+    right: 2rem;
+  }
 }
 @media screen and (min-width: 1280px) {
   .comments-container {
     width: 50%;
+    margin: 0 auto;
+    margin-top: 4rem;
   }
+  .comments-container .comment__date {
+    right: 1rem;
+  }
+}
+
+.comments-container::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 97%;
+  padding-top: 20px;
+  border-bottom: 1px solid #E1E1E1;
 }
 
 @media screen and (min-width: 768px) {
@@ -480,9 +509,21 @@ textarea:focus {
   position: absolute;
   background-color: maroon;
   color: white;
-  right: 1rem;
+  border-radius: 4px;
+  padding: 0.2rem;
+  right: 3rem;
   bottom: 1rem;
-  font-size: 0.5rem;
+  font-size: 0.3rem;
+}
+@media screen and (min-width: 768px) {
+  .button__delete {
+    right: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .button__delete {
+    right: 1rem;
+  }
 }
 
 .footer {

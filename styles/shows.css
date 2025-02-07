@@ -135,6 +135,7 @@ textarea {
   min-height: 2.25rem;
   border-radius: 0.25rem;
   border: 0.0625rem solid #E1E1E1;
+  background-color: #FAFAFA;
 }
 input:focus,
 textarea:focus {

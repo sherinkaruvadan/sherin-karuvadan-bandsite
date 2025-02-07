@@ -29,7 +29,10 @@
     // max-width: 600px;
   }
   @include tablet {
-    &__form-container{
+    &__title {
+      padding-left: 1rem;
+    }
+    &__form-container {
       width: 80%;
       margin: 0 auto;
     }
@@ -37,8 +40,11 @@
       @include avatar(3rem, 3rem);
     }
   }
-  @include desktop{
-    &__form-container{
+  @include desktop {
+    &__title {
+      padding-left: 5.5rem;
+    }
+    &__form-container {
       width: 50%;
     }
   }
@@ -47,7 +53,7 @@
 //comments container section
 .comments-container {
   width: 100%;
-  border-top: 1px solid $link-text;
+  // border-top: 1px solid $link-text;
   .comment {
     border-bottom: 1px solid $link-text;
     display: flex;
@@ -76,24 +82,42 @@
       color: $link-text;
     }
   }
-  @include tablet{
+  @include tablet {
     width: 80%;
     margin: 0 auto;
     margin-top: 2.5rem;
     padding-right: 1rem;
-    .comment{
+    .comment {
       margin: 0 auto;
-      &__image{
+      &__image {
         @include avatar(3rem, 3rem);
       }
-    } 
+      &__date {
+        right: 2rem;
+      }
+    }
   }
-  @include desktop{
+  @include desktop {
     width: 50%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    .comment {
+      &__date {
+        right: 1rem;
+      }
+    }
   }
 }
-.button{
-  @include tablet{
+.comments-container::before{
+  content: ""; 
+  display: block; 
+  margin: 0 auto;
+  width: 97%; 
+  padding-top: 20px;
+  border-bottom: 1px solid $link-text; 
+}
+.button {
+  @include tablet {
     position: absolute;
     right: 0;
     bottom: -1.5rem;
@@ -103,9 +127,17 @@
   position: absolute;
   background-color: maroon;
   color: white;
-  right: 1rem;
+  border-radius: 4px;
+  padding: 0.2rem;
+  right: 3rem;
   bottom: 1rem;
-  font-size: 0.5rem;
+  font-size: 0.3rem;
+  @include tablet {
+    right: 2rem;
+  }
+  @include desktop {
+    right: 1rem;
+  }
 }
 
 //comments form section

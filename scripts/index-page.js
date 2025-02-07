@@ -125,12 +125,23 @@ async function handleFormSubmit(event) {
 
   //checking condition of string that has only white space in input field
   if (
-    nameFieldEl.value.trim().length === 0 ||
+    nameFieldEl.value.trim().length === 0 && 
     commentFieldEl.value.trim().length === 0
   ) {
+
     nameFieldEl.classList.add("form__error");
     commentFieldEl.classList.add("form__error");
     nameFieldEl.value = "";
+    commentFieldEl.value = "";
+    return;
+  }
+  if(nameFieldEl.value.trim().length === 0){
+    nameFieldEl.classList.add("form__error");
+    nameFieldEl.value="";
+    return;
+  }
+  if(commentFieldEl.value.trim().length ===0){
+    commentFieldEl.classList.add("form__error");
     commentFieldEl.value = "";
     return;
   }

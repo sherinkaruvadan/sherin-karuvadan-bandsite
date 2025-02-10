@@ -1,24 +1,3 @@
-// //Define an array of comment objects
-// const comments = [
-//   {
-//     image: "avatar",
-//     name: "Victor Pinto",
-//     date: "11/02/2023",
-//     text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     image: "avatar",
-//     name: "Christina Cabrera",
-//     date: "10/28/2023",
-//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     image: "avatar",
-//     name: "Isaac Tadesse",
-//     date: "10/20/2023",
-//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
 
 const API_KEY = "e0eea5f0-0f8c-4b54-9fc4-ff50843766d4";
 //create a class instance for bandSite Api
@@ -96,16 +75,8 @@ async function commentCardSection() {
 
     for (let i = 0; i < commentsAPI.length; i++) {
       let commentCard = createCommentCard(commentsAPI[i]);
-      //create a divider
-      // let divider = document.createElement("div");
-      // divider.classList.add("comment__divider");
-      // commentsSection.appendChild(divider);
-      //append each card to the parent section
       commentsSection.appendChild(commentCard);
     }
-    // divider = document.createElement("div");
-    // divider.classList.add("comment__divider");
-    // commentsSection.appendChild(divider);
   } catch (error) {
     console.error(error);
   }
@@ -172,10 +143,8 @@ async function handleCommentDelete(commentId, buttonElement){
   try{
     const response = await commentsInstance.deleteComment(commentId)
     const commentCard = buttonElement.closest(".comment");
-    const divider = buttonElement.closest(".comment__divider");
     if(commentCard){
       commentCard.remove();
-      divider.remove();
     }
     commentCardSection();
   }catch(error){
@@ -193,7 +162,7 @@ document.getElementById("commentField").addEventListener("click", (event) => {
 });
 
 
-//function to display the date from timestamp in a user friendly approach
+//function to display the date from timestamp in the comment
 function timeStamp(timestamp) {
   const now = new Date();
   const diffInSeconds = Math.floor((now - timestamp) / 1000);

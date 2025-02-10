@@ -1,36 +1,3 @@
-//Define an array of show objects
-// const shows = [
-//   {
-//     date: "Mon Sept 09 2024",
-//     venue: "Ronald Lane",
-//     showLocation: "San Francisco, CA",
-//   },
-//   {
-//     date: "Tue Sept 17 2024",
-//     venue: "Pier 3 East",
-//     showLocation: "San Francisco, CA",
-//   },
-//   {
-//     date: "Sat Oct 12 2024",
-//     venue: "View Lounge",
-//     showLocation: "San Francisco, CA",
-//   },
-//   {
-//     date: "Sat Nov 16 2024",
-//     venue: "Hyatt Agency",
-//     showLocation: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Nov 29 2024",
-//     venue: "Moscow Center",
-//     showLocation: "San Francisco, CA",
-//   },
-//   {
-//     date: "Wed Dec 18 2024",
-//     venue: "Press Club",
-//     showLocation: "San Francisco, CA",
-//   },
-// ];
 
 const API_KEY = "e0eea5f0-0f8c-4b54-9fc4-ff50843766d4";
 //create a class instance for bandSite Api
@@ -44,12 +11,7 @@ async function fetchShows() {
   for (let i = 0; i < articles.length; i++) {
     let showCard = createShow(articles[i]);
 
-    //create a divider
-    // const divider = document.createElement("div");
-    // divider.classList.add("show__divider");
-    //append the card
     showsContainer.appendChild(showCard);
-    // showsContainer.appendChild(divider);
   }
 
   //add a modifier class to card on clicking
@@ -117,7 +79,6 @@ showsContainer.appendChild(parentTitle);
 function createHeadingAndText(title, detail) {
   const heading = document.createElement("p");
   heading.classList.add("show__title");
-  //   heading.classList.add("show__title--hidden");
   heading.textContent = title;
   const text = document.createElement("p");
   text.classList.add("show__detail");
@@ -155,15 +116,3 @@ function createShow(show) {
 
   return showCard;
 }
-
-// //iterate over array of object
-// for (let i = 0; i < shows.length; i++) {
-//   let showCard = createShow(shows[i]);
-
-//   //create a divider
-//   const divider = document.createElement("div");
-//   divider.classList.add("show__divider");
-//   //append the card
-//   showsContainer.appendChild(showCard);
-//   showsContainer.appendChild(divider);
-// }

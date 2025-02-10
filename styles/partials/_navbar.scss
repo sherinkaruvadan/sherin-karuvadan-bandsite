@@ -54,7 +54,7 @@
   &__underline--hidden {
     display: none;
   }
-  &__a--active + &__underline { //need to check again
+  &__a--active + &__underline { 
     color: $primary-color-light;
   }
   &__a:hover + &__underline {

@@ -96,6 +96,7 @@ textarea {
   min-height: 2.25rem;
   border-radius: 0.25rem;
   border: 0.0625rem solid $link-text;
+  background-color: $background-alternative-light;
   &:focus{
     outline: none;
     border: 0.0625rem solid $primary-color-dark;

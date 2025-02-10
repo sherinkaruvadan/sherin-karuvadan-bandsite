@@ -135,6 +135,7 @@ textarea {
   min-height: 2.25rem;
   border-radius: 0.25rem;
   border: 0.0625rem solid #E1E1E1;
+  background-color: #FAFAFA;
 }
 input:focus,
 textarea:focus {
@@ -351,6 +352,9 @@ textarea:focus {
   transform: translateY(-0.625rem);
 }
 @media screen and (min-width: 768px) {
+  .gallery__title {
+    padding-left: 1rem;
+  }
   .gallery__images {
     display: flex;
     flex-direction: row;
@@ -367,144 +371,158 @@ textarea:focus {
   .gallery {
     padding: 0 3rem;
   }
+  .gallery__title {
+    padding-left: 2.5rem;
+  }
   .gallery__images {
     padding: 0 1.5rem;
   }
 }
 
-.comment {
-  padding: 1rem;
+.comments__form-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
   position: relative;
+  width: 100%;
 }
-.comment__avatar {
+.comments__avatar {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
   background-image: url(../../assets/images/Mohan-muruge.jpg);
   background-position: center;
   background-size: contain;
-  position: absolute;
-  left: 10px;
-  bottom: 11.25rem;
+  margin-top: 1.5rem;
 }
-.comment__form-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: stretch;
-}
-.comment__form {
+.comments__form {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  width: 80%;
+  width: 85%;
   color: #E1E1E1;
   font-weight: bold;
+  padding-bottom: 1rem;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .comment__avatar {
+  .comments__title {
+    padding-left: 1rem;
+  }
+  .comments__form-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .comments__avatar {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    left: 2rem;
-    bottom: 145px;
-  }
-  .comment .button {
-    position: absolute;
-    right: 0.0625rem;
-    top: 12.8125rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .comment__form-container {
-    width: 60%;
-    margin: 0 auto;
+  .comments__title {
+    padding-left: 5.5rem;
   }
-  .comment__avatar {
-    left: 17.5rem;
+  .comments__form-container {
+    width: 50%;
   }
 }
 
 .comments-container {
-  padding: 1rem;
+  width: 100%;
 }
 .comments-container .comment {
-  padding: 1rem;
-  padding-right: 0;
-  position: relative;
+  border-bottom: 1px solid #E1E1E1;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: stretch;
-}
-.comments-container .comment__divider {
-  height: 1px;
-  background-color: #E1E1E1;
-  margin: 1.5rem -1.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  position: relative;
 }
 .comments-container .comment__image {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
   background-color: #E1E1E1;
-  position: absolute;
-  left: 0.5rem;
-  bottom: 3.75rem;
+  flex-shrink: 0;
 }
 .comments-container .comment__texts-container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
+  width: 85%;
 }
 .comments-container .comment__name {
   font-weight: bold;
-  padding: 0.5rem 0;
+  padding-bottom: 0.5rem;
 }
 .comments-container .comment__date {
   position: absolute;
-  right: 4rem;
-  top: 1.5rem;
+  right: 3rem;
   color: #E1E1E1;
 }
 @media screen and (min-width: 768px) {
   .comments-container {
-    padding: 1rem;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    padding-right: 1rem;
   }
-  .comments-container .comment__divider {
-    margin: 1.5rem 1rem;
-    margin-right: 5rem;
+  .comments-container .comment {
+    margin: 0 auto;
   }
   .comments-container .comment__image {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    left: 0.5rem;
-    bottom: 3rem;
-  }
-  .comments-container .comment__texts-container {
-    width: 81%;
   }
   .comments-container .comment__date {
-    right: 5rem;
+    right: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .comments-container .comment__divider {
-    margin: 1.5rem 22rem;
-    margin-left: 15rem;
-  }
-  .comments-container .comment__image {
-    left: 15rem;
-  }
-  .comments-container .comment__texts-container {
+  .comments-container {
     width: 50%;
+    margin: 0 auto;
+    margin-top: 4rem;
   }
   .comments-container .comment__date {
-    right: 22rem;
+    right: 1rem;
+  }
+}
+
+.comments-container::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 97%;
+  padding-top: 20px;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    position: absolute;
+    right: 0;
+    bottom: -1.5rem;
+  }
+}
+
+.button__delete {
+  position: absolute;
+  background-color: maroon;
+  color: white;
+  border-radius: 4px;
+  padding: 0.2rem;
+  right: 3rem;
+  bottom: 1rem;
+  font-size: 0.3rem;
+}
+@media screen and (min-width: 768px) {
+  .button__delete {
+    right: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .button__delete {
+    right: 1rem;
   }
 }
 

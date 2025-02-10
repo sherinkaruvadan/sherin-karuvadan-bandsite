@@ -2,120 +2,140 @@
 @use "./mixin" as *;
 
 //comments form section
-.comment {
-  padding: 1rem;
-  position: relative;
+.comments {
+  &__form-container {
+    // border-bottom: 1px solid $link-text;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+  }
   &__avatar {
     @include avatar(2.25rem, 2.25rem);
     background-image: url(../../assets/images/Mohan-muruge.jpg);
     background-position: center;
     background-size: contain;
-    position: absolute;
-    left: 10px;
-    bottom: 11.25rem;
-  }
-  &__form-container {
-    @include flex(row, space-around);
+    margin-top: 1.5rem;
   }
   &__form {
-    @include flex(column);
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
     color: $link-text;
     font-weight: bold;
+    padding-bottom: 1rem;
     position: relative;
+    // max-width: 600px;
   }
   @include tablet {
-    &__avatar {
-      @include avatar(3rem, 3rem);
-      left: 2rem;
-      bottom: 145px;
+    &__title {
+      padding-left: 1rem;
     }
-    .button {
-      position: absolute;
-      right: 0.0625rem;
-      top: 12.8125rem;
-    }
-  }
-  @include desktop {
     &__form-container {
-      width: 60%;
+      width: 80%;
       margin: 0 auto;
     }
     &__avatar {
-      left: 17.5rem;
+      @include avatar(3rem, 3rem);
+    }
+  }
+  @include desktop {
+    &__title {
+      padding-left: 5.5rem;
+    }
+    &__form-container {
+      width: 50%;
     }
   }
 }
+
 //comments container section
 .comments-container {
-  padding: 1rem;
+  width: 100%;
+  // border-top: 1px solid $link-text;
   .comment {
-    padding: 1rem;
-    padding-right: 0;
+    border-bottom: 1px solid $link-text;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
     position: relative;
-    @include flex(row, space-around);
-    &__divider {
-      height: 1px;
-      background-color: $link-text;
-      margin: 1.5rem -1.5rem;
-    }
     &__image {
       @include avatar(2.25rem, 2.25rem);
       background-color: $link-text;
-      position: absolute;
-      left: 0.5rem;
-      bottom: 3.75rem;
+      flex-shrink: 0;
     }
     &__texts-container {
-      width: 80%;
-      @include flex(column);
+      width: 85%;
+      // max-width: 600px;
+      // flex-grow: 1;
     }
     &__name {
       font-weight: bold;
-      padding: 0.5rem 0;
+      padding-bottom: 0.5rem;
     }
     &__date {
       position: absolute;
-      right: 4rem;
-      top: 1.5rem;
+      right: 3rem;
       color: $link-text;
     }
   }
   @include tablet {
-    padding: 1rem;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    padding-right: 1rem;
     .comment {
-      &__divider {
-        margin: 1.5rem 1rem;
-        margin-right: 5rem;
-      }
+      margin: 0 auto;
       &__image {
         @include avatar(3rem, 3rem);
-        left: 0.5rem;
-        bottom: 3rem;
-      }
-      &__texts-container {
-        width: 81%;
       }
       &__date {
-        right: 5rem;
+        right: 2rem;
       }
     }
   }
   @include desktop {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 4rem;
     .comment {
-      &__divider{
-        margin: 1.5rem 22rem;
-        margin-left: 15rem;
-      }
-      &__image{
-        left: 15rem;
-      }
-      &__texts-container {
-        width: 50%;
-      }
-      &__date{
-        right: 22rem;
+      &__date {
+        right: 1rem;
       }
     }
+  }
+}
+.comments-container::before{
+  content: ""; 
+  display: block; 
+  margin: 0 auto;
+  width: 97%; 
+  padding-top: 20px;
+  border-bottom: 1px solid $link-text; 
+}
+.button {
+  @include tablet {
+    position: absolute;
+    right: 0;
+    bottom: -1.5rem;
+  }
+}
+.button__delete {
+  position: absolute;
+  background-color: maroon;
+  color: white;
+  border-radius: 4px;
+  padding: 0.2rem;
+  right: 3rem;
+  bottom: 1rem;
+  font-size: 0.3rem;
+  @include tablet {
+    right: 2rem;
+  }
+  @include desktop {
+    right: 1rem;
   }
 }

@@ -135,6 +135,7 @@ textarea {
   min-height: 2.25rem;
   border-radius: 0.25rem;
   border: 0.0625rem solid #E1E1E1;
+  background-color: #FAFAFA;
 }
 input:focus,
 textarea:focus {
@@ -426,16 +427,17 @@ textarea:focus {
   }
 }
 
-.shows {
-  padding: 1.5rem;
-}
 .shows__title {
   font-size: 1.75rem;
+  padding-left: 1.5rem;
 }
 .shows__container .show__title--parent {
   display: none;
 }
 @media screen and (min-width: 768px) {
+  .shows {
+    padding: 1.5rem;
+  }
   .shows__container .show__title--parent {
     position: relative;
     width: 70%;
@@ -447,13 +449,15 @@ textarea:focus {
     padding-bottom: 2rem;
     padding-left: 0.75rem;
   }
-  .shows__container .show__title--parent .show__title-date, .shows__container .show__title--parent .show__title-venue, .shows__container .show__title--parent .show__title-location {
+  .shows__container .show__title--parent .show__title-date,
+  .shows__container .show__title--parent .show__title-venue,
+  .shows__container .show__title--parent .show__title-location {
     font-size: 1rem;
     color: #AFAFAF;
     font-weight: bold;
   }
   .shows__container .show__title--parent .show__title-date {
-    padding-left: 0.5rem;
+    padding-left: 0.7rem;
   }
   .shows__container .show__title--parent .show__title-venue {
     padding-left: 3.75rem;
@@ -477,7 +481,8 @@ textarea:focus {
 }
 
 .show {
-  padding: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #E1E1E1;
 }
 .show__title {
   color: #AFAFAF;
@@ -490,11 +495,6 @@ textarea:focus {
 }
 .show__detail:nth-of-type(2) {
   font-weight: bold;
-}
-.show__divider {
-  height: 1px;
-  background-color: #E1E1E1;
-  margin: 1.5rem -1.5rem;
 }
 .show:hover {
   background-color: #FAFAFA;
@@ -511,8 +511,5 @@ textarea:focus {
   }
   .show__title {
     display: none;
-  }
-  .show__divider {
-    margin: 1.5rem 0;
   }
 }/*# sourceMappingURL=shows.css.map */

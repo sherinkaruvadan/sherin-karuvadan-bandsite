@@ -18,6 +18,9 @@
     }
     //tablet
     @include tablet {
+      &__title{
+        padding-left: 1rem; 
+      }
       &__images {
         @include flex(row, space-around);
         flex-wrap: wrap;
@@ -29,6 +32,9 @@
     }
     //desktop
     @include desktop {
+      &__title{
+        padding-left: 2.5rem; 
+      }
       padding: 0 3rem;
       &__images {
         padding: 0 1.5rem;
